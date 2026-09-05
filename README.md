@@ -1,77 +1,95 @@
-# Hi, I'm Abhishek Bhatnagar 👋
+# Abhishek Bhatnagar
 
-I build useful digital products from idea to production across **FinTech**, **LegalTech**, and **Productivity**, with a deep focus on **Flutter**, **Mobile**, **Web**, and practical, user-centric software.
-
----
-
-## 🚀 What I Build
-
-- **FinTech & Commercial Banking**: Commercial credit underwriting engines, 100-point RAM risk scorecards, working capital (MPBF) appraisal suites, and offline-first personal financial diagnostics.
-- **LegalTech**: Comprehensive consultation and practice management platforms connecting citizens with verified advocates, featuring secure appointment workflows and encrypted case vaults.
-- **Productivity & Daily Habits**: Habit-first consumer applications combining frictionless tracking, visual streak mechanics, and behavioral retention loops.
-- **Cross-Platform & Web**: Production-grade mobile experiences on Flutter paired with clean, accessible web interfaces and robust backends.
+I build practical digital products from idea to production across FinTech, LegalTech, and Productivity. My work focuses on building reliable, user-centered mobile and web applications with a strong emphasis on architecture, data privacy, and deterministic calculation accuracy.
 
 ---
 
-## 🛠️ Featured Products
+## What I Build
 
-### 1. [Credalytix / Business Banking Calculator](https://github.com/bhatnagar-built/business-banking-showcase)
-> **Intelligent Commercial Credit Underwriting & RAM Scorecard Engine**
-
-An institutional-grade B2B credit appraisal platform engineered for commercial banking, NBFCs, and SME lenders. Automates multi-year financial statement spreading, multi-ratio diagnostic diagnostics, a calibrated 100-point Risk Assessment Model (RAM) scorecard, and Tandon Method II Working Capital (MPBF) limit assessments.
-
-- **Focus**: Commercial Lending, Credit Risk Modeling, Working Capital (MPBF) Appraisal
-- **Stack**: `TypeScript` • `Web` • `Financial Modeling` • `Underwriting Algorithms`
-- **Showcase**: [bhatnagar-built/business-banking-showcase](https://github.com/bhatnagar-built/business-banking-showcase)
+| Domain / Category | Focus Areas |
+| :--- | :--- |
+| **FinTech & Commercial Banking** | Commercial credit underwriting suites, 100-point RAM risk models, working capital (MPBF) appraisal engines, and personal financial health diagnostics. |
+| **LegalTech** | Multi-persona legal consultation platforms, verified advocate discovery, automated litigation tracking, and encrypted case document vaults. |
+| **Productivity** | Daily habit companion applications, visual streak consistency engines, and frictionless logging workflows. |
+| **Cross-Platform & Web** | Native-grade mobile applications with Flutter, modular web applications, and robust backend services. |
 
 ---
 
-### 2. [CalStreak](https://github.com/bhatnagar-built/CalStreak-Showcase)
-> **Habit-First Nutrition & Daily Streak Tracking Application**
+## Selected Products
 
-A consumer-focused mobile application built to bridge the daily nutrition adherence gap. Rather than burdening users with clinical spreadsheet complexity, CalStreak emphasizes behavioral consistency through gamified streak mechanics, habit scoring, and quick logging.
+### [EMI Health](https://github.com/bhatnagar-built/emi-health-app-showcase)
+**Privacy-First Personal Finance & Debt Diagnostics Application**
 
-- **Focus**: B2C Health, Habit Mechanics, Behavioral Retention
-- **Stack**: `Flutter` • `Dart` • `Mobile UX`
+A consumer-focused financial health application designed to bring clarity to debt obligations and loan structures. Built with a strict local-first, zero-telemetry architecture to ensure sensitive financial data never leaves the user's device.
+- **Key Capabilities**: Debt diagnostics, EMI health scoring, loan amortization modeling, prepayment stress-testing, and repayment scenario simulations.
+- **Focus**: FinTech, Personal Finance, Offline Privacy
+- **Platform & Stack**: Flutter, Dart, Local-First Architecture
+- **Showcase**: [bhatnagar-built/emi-health-app-showcase](https://github.com/bhatnagar-built/emi-health-app-showcase)
+
+---
+
+### [Credalytix](https://github.com/bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase)
+**Commercial Credit Underwriting & RAM Scorecard Engine**
+
+An institutional-grade B2B credit appraisal platform built for commercial lenders, NBFCs, and credit analysts. Automates multi-year financial statement spreading, ratio diagnostics, and regulatory working capital limit assessments.
+- **Key Capabilities**: Calibrated 100-point Risk Assessment Model (RAM) scorecard, Tandon Method II Working Capital (MPBF) calculation, multi-year trend diagnostics, and automated Credit Appraisal Memo generation.
+- **Focus**: Commercial Banking, Credit Risk Modeling, Underwriting Decision Support
+- **Platform & Stack**: TypeScript, Web, Financial Engineering Algorithms
+- **Showcase**: [bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase](https://github.com/bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase)
+
+---
+
+### [CounselPro](https://github.com/bhatnagar-built/counselpro-app-showcase)
+**Verified Legal Consultation & Case Management Platform**
+
+A modern LegalTech application designed to streamline practice workflows and connect clients with verified advocates across India.
+- **Key Capabilities**: Bar Council KYC verification, multi-mode consultation scheduling (audio, video, chamber), milestone-based retainer escrow, encrypted case document vault, and 4-stage litigation milestone tracking.
+- **Focus**: LegalTech, Practice Workflows, Secure Document Management
+- **Platform & Stack**: Flutter, Dart, Node.js, PostgreSQL, Docker
+- **Showcase**: [bhatnagar-built/counselpro-app-showcase](https://github.com/bhatnagar-built/counselpro-app-showcase)
+
+---
+
+### [CalStreak](https://github.com/bhatnagar-built/CalStreak-Showcase)
+**Habit-First Nutrition & Daily Streak Tracking Application**
+
+A consumer mobile companion built to address tracking burnout by replacing spreadsheet-like calorie counters with sustainable habit consistency.
+- **Key Capabilities**: Daily streak preservation engine, glanceable energy baselines, frictionless meal logging, and adaptive habit scoring.
+- **Focus**: Consumer Health, Habit Mechanics, Behavioral Retention
+- **Platform & Stack**: Flutter, Dart, Mobile UX
 - **Showcase**: [bhatnagar-built/CalStreak-Showcase](https://github.com/bhatnagar-built/CalStreak-Showcase)
 
 ---
 
-### 3. [EMI Health](https://github.com/bhatnagar-built/Emi-Health)
-> **Offline-First Financial Health Platform & Debt Amortization Engine**
+## Technology
 
-A privacy-focused financial platform designed for loan diagnostics, debt payoff stress-testing, and real-time amortization schedules. Built with a strict **100% offline-first, zero-telemetry architecture** to ensure sensitive user financial data never leaves the local device.
-
-- **Focus**: Personal Finance, Loan Analytics, Offline Privacy
-- **Stack**: `TypeScript` • `Flutter` • `Web` • `Local-First Storage`
-- **Live Simulator**: [emi-health-d408f.web.app](https://emi-health-d408f.web.app/)
-- **Repository**: [bhatnagar-built/Emi-Health](https://github.com/bhatnagar-built/Emi-Health)
+- **Languages**: Dart, TypeScript, JavaScript, SQL, HTML5, CSS3
+- **Frameworks & Runtimes**: Flutter, Node.js, Express
+- **Databases & Storage**: PostgreSQL, SQLite, Offline Local Storage
+- **Platforms**: Android, iOS, Web
+- **Engineering & Tooling**: Git, GitHub, Docker, REST APIs
 
 ---
 
-### 4. [VakilPro](https://github.com/bhatnagar-built/VakilPro)
-> **On-Demand Legal Consultation & Case Management Super App**
+## Engineering Approach
 
-A full-stack legal services platform connecting clients with verified advocates across India. Includes multi-persona portals (Client, Advocate, Admin), slot-based consultation scheduling (Audio, Video, Chamber), Bar Council KYC verification workflows, and an encrypted legal document vault.
-
-- **Focus**: LegalTech, Multi-Persona Workflows, Secure Document Vault
-- **Stack**: `Flutter` • `Dart` • `TypeScript` • `Node.js` • `PostgreSQL` • `Docker`
-- **Repository**: [bhatnagar-built/VakilPro](https://github.com/bhatnagar-built/VakilPro)
+- **Product-First Thinking**: Software engineered around actual user behavior and real workflows, not theoretical feature lists.
+- **Privacy by Design**: Sensitive financial and legal information is protected through local-first storage, client-side encryption, and zero-telemetry architectures where applicable.
+- **Deterministic Calculation Quality**: Mission-critical banking and financial models are calibrated against regulatory standards with rigorous boundary testing.
+- **Maintainable Architecture**: Clean separation of presentation, domain business logic, and data layers to ensure codebases remain scalable and resilient over time.
 
 ---
 
-## 💻 Tech Stack & Capabilities
+## Current Focus
 
-| Domain | Technologies & Tools |
-| :--- | :--- |
-| **Mobile & Frontend** | Flutter, Dart, TypeScript, JavaScript, HTML5, CSS3 |
-| **Backend & Databases** | Node.js, Express, PostgreSQL, REST APIs |
-| **Architecture & State** | Offline-First Architecture, Clean Architecture, State Management, Responsive Design |
-| **DevOps & Tooling** | Docker, Git, GitHub Actions |
+- Expanding commercial credit underwriting and banking decision-support tools.
+- Enhancing legal practice workflow automation and document verification systems.
+- Deepening cross-platform mobile architectures with Flutter.
+- Maintaining high standards for privacy, performance, and user interface responsiveness.
 
 ---
 
-## 📬 Connect With Me
+## Connect
 
 - **LinkedIn**: [linkedin.com/in/abhishek-bhatnagar](https://www.linkedin.com/in/abhishek-bhatnagar)
 - **GitHub**: [github.com/bhatnagar-built](https://github.com/bhatnagar-built)
