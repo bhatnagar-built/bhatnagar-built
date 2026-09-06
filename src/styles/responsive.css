@@ -78,6 +78,12 @@
     transform: translate3d(96px, -40px, -60px);
   }
 
+  .hero__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 600px;
+  }
+
   .products__grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -146,16 +152,6 @@
 
   .theme-segmented__btn {
     padding: 5px 8px;
-  }
-
-  .floating-theme-toggle__label {
-    display: none;
-  }
-
-  .floating-theme-toggle {
-    padding: 10px;
-    bottom: var(--space-4);
-    right: var(--space-4);
   }
 
   .section__header {
@@ -252,6 +248,35 @@
     font-size: 10px;
     text-align: center;
     justify-content: center;
+  }
+
+  .hero__pillars-strip {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+  }
+
+  .hero__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6) var(--space-4);
+  }
+
+  .pillar-badge {
+    width: 52px;
+    height: 52px;
+    margin-bottom: var(--space-3);
+  }
+
+  .pillar-badge__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pillar-title {
+    font-size: 1rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.8rem;
   }
 
   .capabilities__grid {
