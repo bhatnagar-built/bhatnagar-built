@@ -1,95 +1,69 @@
-# Abhishek Bhatnagar
+# Abhishek Bhatnagar — Personal Portfolio
 
-I build practical digital products from idea to production across FinTech, LegalTech, and Productivity. My work focuses on building reliable, user-centered mobile and web applications with a strong emphasis on architecture, data privacy, and deterministic calculation accuracy.
+> **Product Developer | FinTech • LegalTech • Mobile • Web**
+> Building useful products from idea to production.
 
----
-
-## What I Build
-
-| Domain / Category | Focus Areas |
-| :--- | :--- |
-| **FinTech & Commercial Banking** | Commercial credit underwriting suites, 100-point RAM risk models, working capital (MPBF) appraisal engines, and personal financial health diagnostics. |
-| **LegalTech** | Multi-persona legal consultation platforms, verified advocate discovery, automated litigation tracking, and encrypted case document vaults. |
-| **Productivity** | Daily habit companion applications, visual streak consistency engines, and frictionless logging workflows. |
-| **Cross-Platform & Web** | Native-grade mobile applications with Flutter, modular web applications, and robust backend services. |
+This repository contains the complete source code for Abhishek Bhatnagar's personal portfolio website, engineered with a **Neo-Futurist Product Lab** aesthetic and designed around verified GitHub open-source evidence.
 
 ---
 
-## Selected Products
+## 🌟 Features
 
-### [EMI Health](https://github.com/bhatnagar-built/emi-health-app-showcase)
-**Privacy-First Personal Finance & Debt Diagnostics Application**
-
-A consumer-focused financial health application designed to bring clarity to debt obligations and loan structures. Built with a strict local-first, zero-telemetry architecture to ensure sensitive financial data never leaves the user's device.
-- **Key Capabilities**: Debt diagnostics, EMI health scoring, loan amortization modeling, prepayment stress-testing, and repayment scenario simulations.
-- **Focus**: FinTech, Personal Finance, Offline Privacy
-- **Platform & Stack**: Flutter, Dart, Local-First Architecture
-- **Showcase**: [bhatnagar-built/emi-health-app-showcase](https://github.com/bhatnagar-built/emi-health-app-showcase)
-
----
-
-### [Credalytix](https://github.com/bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase)
-**Commercial Credit Underwriting & RAM Scorecard Engine**
-
-An institutional-grade B2B credit appraisal platform built for commercial lenders, NBFCs, and credit analysts. Automates multi-year financial statement spreading, ratio diagnostics, and regulatory working capital limit assessments.
-- **Key Capabilities**: Calibrated 100-point Risk Assessment Model (RAM) scorecard, Tandon Method II Working Capital (MPBF) calculation, multi-year trend diagnostics, and automated Credit Appraisal Memo generation.
-- **Focus**: Commercial Banking, Credit Risk Modeling, Underwriting Decision Support
-- **Platform & Stack**: TypeScript, Web, Financial Engineering Algorithms
-- **Showcase**: [bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase](https://github.com/bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase)
+- **Product-First Narrative**: Centered on 4 core applications:
+  - **EMI Health**: Privacy-first personal finance & debt diagnostics (Flutter / Dart / Local-First)
+  - **Credalytix**: Commercial credit underwriting & 100-point RAM scorecard engine (TypeScript / Web)
+  - **CounselPro**: Verified legal practice & encrypted case vault management (Flutter / Dart)
+  - **CalStreak**: Habit-first nutrition & daily streak tracking (Flutter / Dart)
+- **Fluid Dark / Light Mode**:
+  - Dark Theme: Neo-Futurist Product Lab with electric cyan accents (`#38BDF8`) and deep slate backdrops.
+  - Light Theme: Clean high-end product studio with crisp surfaces, layered drop shadows, and accessible sky-blue accents.
+  - Automatic OS color scheme detection and persistent `localStorage` preference with zero FOUC.
+- **Interactive Capabilities & Architecture**:
+  - Interactive process timeline detailing the 6-stage lifecycle (Problem Discovery → Solution Architecture → System Design → Core Implementation → Validation → Ship).
+  - Categorized engineering philosophy principles and verified technology stack pills.
+  - Direct links to GitHub showcase repositories.
+- **Verified Contact & Links**:
+  - Direct Email: `abhi.bhatnagar.official@gmail.com`
+  - GitHub: [bhatnagar-built](https://github.com/bhatnagar-built)
+  - LinkedIn: [abhishek-bhatnagar](https://www.linkedin.com/in/abhishek-bhatnagar)
 
 ---
 
-### [CounselPro](https://github.com/bhatnagar-built/counselpro-app-showcase)
-**Verified Legal Consultation & Case Management Platform**
+## 🛠️ Tech Stack
 
-A modern LegalTech application designed to streamline practice workflows and connect clients with verified advocates across India.
-- **Key Capabilities**: Bar Council KYC verification, multi-mode consultation scheduling (audio, video, chamber), milestone-based retainer escrow, encrypted case document vault, and 4-stage litigation milestone tracking.
-- **Focus**: LegalTech, Practice Workflows, Secure Document Management
-- **Platform & Stack**: Flutter, Dart, Node.js, PostgreSQL, Docker
-- **Showcase**: [bhatnagar-built/counselpro-app-showcase](https://github.com/bhatnagar-built/counselpro-app-showcase)
+- **Core**: Vanilla HTML5, JavaScript (ES Modules), Vanilla CSS (CSS Custom Properties)
+- **Bundler & Dev Server**: Vite 8.2+
+- **Icons**: Lucide Icons + Brand SVGs
+- **Typography**: Space Grotesk, Inter, JetBrains Mono (Google Fonts)
 
 ---
 
-### [CalStreak](https://github.com/bhatnagar-built/CalStreak-Showcase)
-**Habit-First Nutrition & Daily Streak Tracking Application**
+## 🚀 Getting Started
 
-A consumer mobile companion built to address tracking burnout by replacing spreadsheet-like calorie counters with sustainable habit consistency.
-- **Key Capabilities**: Daily streak preservation engine, glanceable energy baselines, frictionless meal logging, and adaptive habit scoring.
-- **Focus**: Consumer Health, Habit Mechanics, Behavioral Retention
-- **Platform & Stack**: Flutter, Dart, Mobile UX
-- **Showcase**: [bhatnagar-built/CalStreak-Showcase](https://github.com/bhatnagar-built/CalStreak-Showcase)
+### Prerequisites
 
----
+- Node.js (v18+)
+- npm
 
-## Technology
+### Installation & Development
 
-- **Languages**: Dart, TypeScript, JavaScript, SQL, HTML5, CSS3
-- **Frameworks & Runtimes**: Flutter, Node.js, Express
-- **Databases & Storage**: PostgreSQL, SQLite, Offline Local Storage
-- **Platforms**: Android, iOS, Web
-- **Engineering & Tooling**: Git, GitHub, Docker, REST APIs
+```bash
+# Clone the repository
+git clone https://github.com/bhatnagar-built/bhatnagar-built.git
+cd bhatnagar-built
 
----
+# Install dependencies
+npm install
 
-## Engineering Approach
+# Start development server
+npm run dev
 
-- **Product-First Thinking**: Software engineered around actual user behavior and real workflows, not theoretical feature lists.
-- **Privacy by Design**: Sensitive financial and legal information is protected through local-first storage, client-side encryption, and zero-telemetry architectures where applicable.
-- **Deterministic Calculation Quality**: Mission-critical banking and financial models are calibrated against regulatory standards with rigorous boundary testing.
-- **Maintainable Architecture**: Clean separation of presentation, domain business logic, and data layers to ensure codebases remain scalable and resilient over time.
+# Build for production
+npm run build
+```
 
 ---
 
-## Current Focus
+## 📄 License
 
-- Expanding commercial credit underwriting and banking decision-support tools.
-- Enhancing legal practice workflow automation and document verification systems.
-- Deepening cross-platform mobile architectures with Flutter.
-- Maintaining high standards for privacy, performance, and user interface responsiveness.
-
----
-
-## Connect
-
-- **LinkedIn**: [linkedin.com/in/abhishek-bhatnagar](https://www.linkedin.com/in/abhishek-bhatnagar)
-- **GitHub**: [github.com/bhatnagar-built](https://github.com/bhatnagar-built)
+MIT © 2026 Abhishek Bhatnagar. All rights reserved.

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Bhatnagar — Product Developer | FinTech • LegalTech • Mobile • Web</title>
+  <meta name="description" content="Abhishek Bhatnagar builds real-world products across FinTech, LegalTech, and Productivity. Flutter, mobile, and web applications engineered from idea to production." />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abhishek Bhatnagar — Product Developer" />
+  <meta property="og:description" content="Building useful products from idea to production. FinTech, LegalTech, and Productivity applications across mobile and web." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhishekbhatnagar.dev" />
+  <meta property="og:image" content="/og-preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abhishek Bhatnagar — Product Developer" />
+  <meta name="twitter:description" content="Building useful products from idea to production. FinTech, LegalTech, and Productivity applications across mobile and web." />
+  <meta name="twitter:image" content="/og-preview.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Theme Script (Prevent FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="/src/styles/design-system.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+  <link rel="stylesheet" href="/src/styles/responsive.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__container">
+        <a href="#hero" class="nav__brand" aria-label="Abhishek Bhatnagar - Home">
+          <span class="nav__logo">AB</span>
+          <span class="nav__name">ABHISHEK</span>
+        </a>
+        <div class="nav__links" id="nav-links" role="menubar">
+          <a href="#products" class="nav__link" role="menuitem">Work</a>
+          <a href="#what-i-build" class="nav__link" role="menuitem">Products</a>
+          <a href="#engineering" class="nav__link" role="menuitem">Engineering</a>
+          <a href="#about" class="nav__link" role="menuitem">About</a>
+          <a href="#contact" class="nav__link" role="menuitem">Contact</a>
+          <a href="https://github.com/bhatnagar-built" class="nav__link nav__link--github" target="_blank" rel="noopener noreferrer" role="menuitem" aria-label="GitHub Profile">
+            <svg class="nav__icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+        <div class="nav__actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" title="Toggle theme (Light / Dark)">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+          <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__overlay"></div>
+      <div class="mobile-menu__panel">
+        <a href="#hero" class="mobile-menu__link">Home</a>
+        <a href="#products" class="mobile-menu__link">Work</a>
+        <a href="#what-i-build" class="mobile-menu__link">Products</a>
+        <a href="#engineering" class="mobile-menu__link">Engineering</a>
+        <a href="#about" class="mobile-menu__link">About</a>
+        <a href="#contact" class="mobile-menu__link">Contact</a>
+        <a href="https://github.com/bhatnagar-built" class="mobile-menu__link mobile-menu__link--github" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub Profile</span>
+        </a>
+        <div class="mobile-menu__theme">
+          <span class="mobile-menu__theme-label">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <span>Appearance</span>
+          </span>
+          <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Switch to light theme" title="Toggle theme">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero__bg">
+        <div class="hero__grid"></div>
+        <div class="hero__radial"></div>
+        <div class="hero__line hero__line--1"></div>
+        <div class="hero__line hero__line--2"></div>
+        <div class="hero__line hero__line--3"></div>
+      </div>
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__micro-label" aria-hidden="true">
+            <span>PRODUCT</span>
+            <span class="hero__micro-dot"></span>
+            <span>ENGINEERING</span>
+            <span class="hero__micro-dot"></span>
+            <span>DELIVERY</span>
+          </div>
+          <h1 class="hero__title">
+            I build useful products<br />
+            <span class="hero__title-accent">from idea to production.</span>
+          </h1>
+          <p class="hero__subtitle">
+            FinTech, LegalTech, and Productivity applications across mobile and web.
+          </p>
+          <div class="hero__cta-group">
+            <a href="#products" class="btn btn--primary" id="cta-explore-work">
+              <span>Explore My Work</span>
+              <i data-lucide="arrow-down" class="btn__icon"></i>
+            </a>
+            <a href="https://github.com/bhatnagar-built" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" id="cta-github">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>View GitHub</span>
+            </a>
+          </div>
+          <div class="hero__metrics">
+            <div class="hero__metric">
+              <span class="hero__metric-value">4</span>
+              <span class="hero__metric-label">Featured Products</span>
+            </div>
+            <div class="hero__metric-divider"></div>
+            <div class="hero__metric">
+              <span class="hero__metric-value">3</span>
+              <span class="hero__metric-label">Platforms</span>
+            </div>
+            <div class="hero__metric-divider"></div>
+            <div class="hero__metric">
+              <span class="hero__metric-value">3</span>
+              <span class="hero__metric-label">Domains</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__product-stack">
+            <div class="hero__product-card hero__product-card--1" data-product="emi-health">
+              <div class="hero__product-card-header">
+                <span class="hero__product-card-dot hero__product-card-dot--green"></span>
+                <span class="hero__product-card-name">EMI Health</span>
+              </div>
+              <div class="hero__product-card-body">
+                <div class="hero__product-card-tag">FinTech</div>
+                <p>Privacy-first debt diagnostics</p>
+              </div>
+            </div>
+            <div class="hero__product-card hero__product-card--2" data-product="counselpro">
+              <div class="hero__product-card-header">
+                <span class="hero__product-card-dot hero__product-card-dot--blue"></span>
+                <span class="hero__product-card-name">CounselPro</span>
+              </div>
+              <div class="hero__product-card-body">
+                <div class="hero__product-card-tag hero__product-card-tag--purple">LegalTech</div>
+                <p>Verified legal consultation</p>
+              </div>
+            </div>
+            <div class="hero__product-card hero__product-card--3" data-product="credalytix">
+              <div class="hero__product-card-header">
+                <span class="hero__product-card-dot hero__product-card-dot--amber"></span>
+                <span class="hero__product-card-name">Credalytix</span>
+              </div>
+              <div class="hero__product-card-body">
+                <div class="hero__product-card-tag hero__product-card-tag--amber">Banking</div>
+                <p>Credit underwriting suite</p>
+              </div>
+            </div>
+            <div class="hero__product-card hero__product-card--4" data-product="calstreak">
+              <div class="hero__product-card-header">
+                <span class="hero__product-card-dot hero__product-card-dot--green"></span>
+                <span class="hero__product-card-name">CalStreak</span>
+              </div>
+              <div class="hero__product-card-body">
+                <div class="hero__product-card-tag hero__product-card-tag--green">Health</div>
+                <p>Habit-first nutrition tracking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Products -->
+    <section id="products" class="section products" aria-label="Selected Products">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">PORTFOLIO</span>
+          <h2 class="section__title">Selected Products</h2>
+          <p class="section__desc">Real-world applications built from idea to production, each solving genuine problems in their domain.</p>
+        </div>
+        <div class="products__grid" id="products-grid">
+          <!-- Products injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Build -->
+    <section id="what-i-build" class="section what-i-build" aria-label="What I Build">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">CAPABILITIES</span>
+          <h2 class="section__title">What I Build</h2>
+        </div>
+        <div class="capabilities__grid" id="capabilities-grid">
+          <!-- Capabilities injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section process" aria-label="Development Process">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">WORKFLOW</span>
+          <h2 class="section__title">From Idea to Product</h2>
+        </div>
+        <div class="process__timeline" id="process-timeline">
+          <!-- Process steps injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Approach -->
+    <section id="engineering" class="section engineering" aria-label="Engineering Approach">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">PHILOSOPHY</span>
+          <h2 class="section__title">Engineering Approach</h2>
+        </div>
+        <div class="engineering__grid" id="engineering-grid">
+          <!-- Engineering principles injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="technology" class="section technology" aria-label="Technology Stack">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">STACK</span>
+          <h2 class="section__title">Technology</h2>
+        </div>
+        <div class="tech__grid" id="tech-grid">
+          <!-- Tech categories injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Evidence -->
+    <section id="github" class="section github-evidence" aria-label="GitHub Evidence">
+      <div class="section__container">
+        <div class="github__content">
+          <div class="github__text">
+            <span class="section__label">OPEN SOURCE</span>
+            <h2 class="section__title">GitHub Evidence</h2>
+            <p class="github__desc">This portfolio shows the product. GitHub shows the engineering evidence. Explore public showcase repositories with real documentation, screenshots, and architectural details.</p>
+            <div class="github__repos" id="github-repos">
+              <!-- Repos injected via JS -->
+            </div>
+            <a href="https://github.com/bhatnagar-built" target="_blank" rel="noopener noreferrer" class="btn btn--primary" id="cta-view-github">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>View GitHub Profile</span>
+              <i data-lucide="external-link" class="btn__icon btn__icon--small"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about" aria-label="About">
+      <div class="section__container">
+        <div class="about__grid">
+          <div class="about__text">
+            <span class="section__label">ABOUT</span>
+            <h2 class="section__title">About</h2>
+            <p class="about__bio">I build practical digital products that turn complex workflows and real-world problems into useful software. My work spans FinTech, LegalTech, and Productivity — delivered across mobile and web platforms with a focus on privacy-conscious architecture, deterministic calculations, and product-first engineering.</p>
+          </div>
+          <div class="about__focus">
+            <h3 class="about__focus-title">Current Focus</h3>
+            <ul class="about__focus-list" id="focus-list">
+              <!-- Focus items injected via JS -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact" aria-label="Contact">
+      <div class="section__container">
+        <div class="contact__content">
+          <span class="section__label">GET IN TOUCH</span>
+          <h2 class="contact__title">Let's Build Something Useful</h2>
+          <p class="contact__desc">Interested in discussing a product idea, engineering architecture, or collaboration? I'm always open to conversations about meaningful software.</p>
+          <div class="contact__links">
+            <a href="mailto:abhi.bhatnagar.official@gmail.com" class="contact__link contact__link--email" id="contact-email" aria-label="Email Abhishek Bhatnagar">
+              <i data-lucide="mail"></i>
+              <span>abhi.bhatnagar.official@gmail.com</span>
+            </a>
+            <a href="https://github.com/bhatnagar-built" target="_blank" rel="noopener noreferrer" class="contact__link" id="contact-github" aria-label="GitHub Profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/abhishek-bhatnagar" target="_blank" rel="noopener noreferrer" class="contact__link" id="contact-linkedin" aria-label="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.88 0-1.6.72-1.6 1.6 0 .89.72 1.6 1.6 1.6.89 0 1.61-.71 1.61-1.6 0-.88-.72-1.6-1.61-1.6Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <span class="footer__logo">AB</span>
+          <div class="footer__info">
+            <span class="footer__name">Abhishek Bhatnagar</span>
+            <span class="footer__role">Product Builder</span>
+          </div>
+        </div>
+        <div class="footer__links">
+          <a href="mailto:abhi.bhatnagar.official@gmail.com" aria-label="Email Abhishek Bhatnagar" title="abhi.bhatnagar.official@gmail.com">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="https://github.com/bhatnagar-built" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/abhishek-bhatnagar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.88 0-1.6.72-1.6 1.6 0 .89.72 1.6 1.6 1.6.89 0 1.61-.71 1.61-1.6 0-.88-.72-1.6-1.61-1.6Z"/></svg>
+          </a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Abhishek Bhatnagar. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
