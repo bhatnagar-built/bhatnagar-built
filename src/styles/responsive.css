@@ -82,6 +82,24 @@
     padding: var(--space-16) 0;
   }
 
+  .theme-segmented__btn span {
+    display: none;
+  }
+
+  .theme-segmented__btn {
+    padding: 5px 8px;
+  }
+
+  .floating-theme-toggle__label {
+    display: none;
+  }
+
+  .floating-theme-toggle {
+    padding: 10px;
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+
   .section__header {
     margin-bottom: var(--space-10);
   }

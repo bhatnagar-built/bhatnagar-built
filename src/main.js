@@ -322,7 +322,19 @@ function initLucideIcons() {
 
 // ── Theme Switcher ──────────────────────────────────────────
 function initTheme() {
-  const toggles = [
+  const darkBtns = [
+    document.getElementById('theme-btn-dark'),
+    document.getElementById('theme-btn-dark-mobile')
+  ].filter(Boolean);
+
+  const lightBtns = [
+    document.getElementById('theme-btn-light'),
+    document.getElementById('theme-btn-light-mobile')
+  ].filter(Boolean);
+
+  const floatingToggle = document.getElementById('floating-theme-toggle');
+  const floatingLabel = document.getElementById('floating-theme-label');
+  const legacyToggles = [
     document.getElementById('theme-toggle'),
     document.getElementById('theme-toggle-mobile')
   ].filter(Boolean);
@@ -339,26 +351,70 @@ function initTheme() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 
-    const nextLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
-    toggles.forEach(toggle => {
+    const isDark = theme === 'dark';
+
+    // Update segmented buttons aria-checked
+    darkBtns.forEach(btn => {
+      btn.setAttribute('aria-checked', isDark ? 'true' : 'false');
+    });
+    lightBtns.forEach(btn => {
+      btn.setAttribute('aria-checked', !isDark ? 'true' : 'false');
+    });
+
+    // Update floating toggle label & title
+    if (floatingLabel) {
+      floatingLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    }
+    if (floatingToggle) {
+      const nextTitle = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+      floatingToggle.setAttribute('title', nextTitle);
+      floatingToggle.setAttribute('aria-label', nextTitle);
+    }
+
+    // Legacy toggles
+    legacyToggles.forEach(toggle => {
+      const nextLabel = isDark ? 'Switch to light theme' : 'Switch to dark theme';
       toggle.setAttribute('aria-label', nextLabel);
       toggle.setAttribute('title', nextLabel);
     });
   }
 
-  // Set initial labels & attributes
+  // Set initial theme
   applyTheme(getCurrentTheme());
 
-  // Click handlers
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const current = getCurrentTheme();
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
+  // Segmented Dark button click
+  darkBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme('dark');
     });
   });
 
-  // OS theme change listener (only updates if user hasn't explicitly set localStorage)
+  // Segmented Light button click
+  lightBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme('light');
+    });
+  });
+
+  // Floating Toggle click
+  if (floatingToggle) {
+    floatingToggle.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  // Legacy toggles click
+  legacyToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  });
+
+  // OS theme change listener
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
       if (!localStorage.getItem('theme')) {

@@ -73,15 +73,17 @@
           </a>
         </div>
         <div class="nav__actions">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" title="Toggle theme (Light / Dark)">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-            </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-            </svg>
-          </button>
+          <div class="theme-segmented" id="theme-segmented" role="radiogroup" aria-label="Theme selector">
+            <button class="theme-segmented__btn theme-segmented__btn--dark" id="theme-btn-dark" role="radio" aria-checked="true" aria-label="Dark mode" title="Switch to Dark mode">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              <span>Dark</span>
+            </button>
+            <button class="theme-segmented__btn theme-segmented__btn--light" id="theme-btn-light" role="radio" aria-checked="false" aria-label="Light mode" title="Switch to Light mode">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              <span>Light</span>
+            </button>
+            <div class="theme-segmented__slider" aria-hidden="true"></div>
+          </div>
           <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span class="nav__toggle-bar"></span>
             <span class="nav__toggle-bar"></span>
@@ -110,15 +112,17 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <span>Appearance</span>
           </span>
-          <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Switch to light theme" title="Toggle theme">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-            </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-            </svg>
-          </button>
+          <div class="theme-segmented" id="theme-segmented-mobile" role="radiogroup" aria-label="Theme selector (Mobile)">
+            <button class="theme-segmented__btn theme-segmented__btn--dark" id="theme-btn-dark-mobile" role="radio" aria-checked="true" aria-label="Dark mode">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              <span>Dark</span>
+            </button>
+            <button class="theme-segmented__btn theme-segmented__btn--light" id="theme-btn-light-mobile" role="radio" aria-checked="false" aria-label="Light mode">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              <span>Light</span>
+            </button>
+            <div class="theme-segmented__slider" aria-hidden="true"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -377,6 +381,17 @@
         <p class="footer__copy">&copy; 2026 Abhishek Bhatnagar. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Floating Theme Toggle Button -->
+    <button class="floating-theme-toggle" id="floating-theme-toggle" aria-label="Toggle light and dark mode" title="Switch theme mode">
+      <span class="floating-theme-toggle__icon floating-theme-toggle__icon--dark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      </span>
+      <span class="floating-theme-toggle__icon floating-theme-toggle__icon--light" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+      </span>
+      <span class="floating-theme-toggle__label" id="floating-theme-label">Light Mode</span>
+    </button>
   </div>
 
   <script type="module" src="/src/main.js"></script>
