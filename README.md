@@ -25,7 +25,7 @@ This repository contains the complete source code for Abhishek Bhatnagar's perso
 - **Verified Contact & Links**:
   - Direct Email: `abhi.bhatnagar.official@gmail.com`
   - GitHub: [bhatnagar-built](https://github.com/bhatnagar-built)
-  - LinkedIn: [abhishek-bhatnagar](https://www.linkedin.com/in/abhishek-bhatnagar)
+  - LinkedIn: [abhishek-bhatnagar](https://www.linkedin.com/in/abhishek-bhatnagar-44022b131/)
 
 ---
 

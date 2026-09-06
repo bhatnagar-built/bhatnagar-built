@@ -42,6 +42,18 @@ export function initBurstShowcase() {
     });
   });
 
+  // Global listener for any [data-trigger-burst] element across the site (e.g. from Products section)
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-trigger-burst]');
+    if (trigger) {
+      const productId = trigger.getAttribute('data-trigger-burst');
+      if (productId && appShowcases[productId]) {
+        e.preventDefault();
+        openBurstStage(productId);
+      }
+    }
+  });
+
   // Open the Burst Stage with explosive transition
   function openBurstStage(productId) {
     currentAppId = productId;
