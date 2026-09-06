@@ -308,8 +308,14 @@
 
 /* ── Process & Engineering Workflow ───────────────────────── */
 .engineering {
-  background: var(--color-bg-secondary);
+  background: rgba(13, 19, 29, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: relative;
+}
+
+[data-theme="light"] .engineering {
+  background: rgba(241, 245, 249, 0.82);
 }
 
 .process__header {
@@ -517,7 +523,13 @@
 }
 
 .technology {
-  background: var(--color-bg-secondary);
+  background: rgba(13, 19, 29, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .technology {
+  background: rgba(241, 245, 249, 0.82);
 }
 
 /* ── GitHub Evidence ─────────────────────────────────────── */
@@ -747,7 +759,13 @@
 
 /* ── About ───────────────────────────────────────────────── */
 .about {
-  background: var(--color-bg-secondary);
+  background: rgba(13, 19, 29, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .about {
+  background: rgba(241, 245, 249, 0.82);
 }
 
 .about__grid {

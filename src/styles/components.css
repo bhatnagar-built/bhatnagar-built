@@ -516,16 +516,31 @@
   background: var(--color-capability-bg);
 }
 
+/* ── Sci-Fi Ambient Background Canvas ─────────────────────── */
+.scifi-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
+
 /* ── Section Base ────────────────────────────────────────── */
 .section {
   padding: var(--space-24) 0;
   position: relative;
+  z-index: 1;
 }
 
 .section__container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--space-6);
+  position: relative;
+  z-index: 2;
 }
 
 .section__header {

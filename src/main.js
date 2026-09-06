@@ -15,10 +15,12 @@ import {
   githubRepos,
   currentFocus
 } from './data/portfolio.js';
+import { initSciFiBackground } from './components/scifi-background.js';
 
 // ── Initialize ──────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initSciFiBackground();
   renderProducts();
   renderCapabilities();
   renderProcessTimeline();
@@ -285,8 +287,8 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: 0.05,
+    rootMargin: '50px 0px 50px 0px'
   });
 
   reveals.forEach(el => revealObserver.observe(el));
