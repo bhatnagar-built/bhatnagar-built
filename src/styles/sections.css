@@ -306,97 +306,200 @@
   gap: var(--space-6);
 }
 
-/* ── Process Timeline ────────────────────────────────────── */
-.process {
+/* ── Process & Engineering Workflow ───────────────────────── */
+.engineering {
   background: var(--color-bg-secondary);
+  position: relative;
 }
 
-.process__timeline {
+.process__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.process__header-left .section__label {
+  margin-bottom: var(--space-2);
+}
+
+.process__header-left .section__title {
+  font-size: var(--text-4xl);
+}
+
+.process__header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent-primary);
+  transition: color var(--duration-micro) var(--ease-out);
+  padding: var(--space-2) 0;
+  text-decoration: none;
+}
+
+.process__header-link svg {
+  transition: transform var(--duration-standard) var(--ease-spring);
+}
+
+.process__header-link:hover {
+  color: var(--color-accent-primary-light);
+}
+
+.process__header-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Process Bar (Horizontal Icon Timeline) ───────────────── */
+.process-flow {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  width: 100%;
   position: relative;
-  padding: var(--space-8) 0;
+  padding: var(--space-4) 0 var(--space-16);
 }
 
-.process__timeline::before {
-  content: '';
-  position: absolute;
-  top: calc(50% + 10px);
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: var(--color-border);
-  transform: translateY(-50%);
-}
-
-.process__timeline::after {
-  content: '';
-  position: absolute;
-  top: calc(50% + 10px);
-  left: 5%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent-primary), rgba(56, 189, 248, 0.3));
-  transform: translateY(-50%);
-  width: 0%;
-  animation: process-line-grow 3s var(--ease-out) forwards;
-  animation-play-state: paused;
-}
-
-.process__timeline.animate::after {
-  animation-play-state: running;
-}
-
-@keyframes process-line-grow {
-  to { width: 90%; }
-}
-
-.process__step {
+/* Step Node Container */
+.process-flow__step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
-  position: relative;
-  z-index: var(--z-base);
-  flex: 1;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 140px;
 }
 
-.process__step-dot {
-  width: 14px;
-  height: 14px;
+/* Circle Badge with Icon */
+.process-flow__circle {
+  width: 58px;
+  height: 58px;
   border-radius: var(--radius-full);
   background: var(--color-bg-surface);
   border: 2px solid var(--color-accent-primary);
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 18px var(--color-glow-subtle);
+  transition: transform var(--duration-standard) var(--ease-spring),
+              box-shadow var(--duration-standard) var(--ease-out),
+              border-color var(--duration-standard) var(--ease-out),
+              background-color var(--duration-standard) var(--ease-out);
+  cursor: default;
 }
 
-.process__step-dot::after {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  border-radius: var(--radius-full);
-  background: var(--color-accent-primary);
-  opacity: 0;
-  transition: opacity var(--duration-standard) var(--ease-out);
+.process-flow__circle svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  transition: transform var(--duration-standard) var(--ease-spring);
 }
 
-.process__step:hover .process__step-dot::after {
-  opacity: 1;
+.process-flow__step:hover .process-flow__circle {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px var(--color-glow-strong);
+  border-color: var(--color-accent-primary-light);
 }
 
-.process__step-label {
+.process-flow__step:hover .process-flow__circle svg {
+  transform: scale(1.1);
+}
+
+/* Step Labels */
+.process-flow__text {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-flow__name {
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
   color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
 }
 
-.process__step-number {
-  font-family: var(--font-mono);
-  font-size: 10px;
+.process-flow__desc {
+  font-family: var(--font-body);
+  font-size: 12.5px;
   color: var(--color-text-muted);
-  letter-spacing: var(--tracking-wider);
+  margin-top: 4px;
+  line-height: 1.35;
+  max-width: 125px;
+}
+
+/* Connector Line with Directional Arrow */
+.process-flow__connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px; /* matches 58px circle height so line is dead center */
+  position: relative;
+  z-index: 1;
+  min-width: 24px;
+  padding: 0 4px;
+}
+
+.process-flow__line {
+  flex: 1;
+  height: 2px;
+  background: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.15);
+  transition: background var(--duration-standard) var(--ease-out),
+              box-shadow var(--duration-standard) var(--ease-out);
+}
+
+[data-theme="light"] .process-flow__line {
+  background: rgba(2, 132, 199, 0.35);
+  box-shadow: none;
+}
+
+.process-flow__arrow {
+  width: 14px;
+  height: 14px;
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  margin: 0 2px;
+  opacity: 0.85;
+  transition: transform var(--duration-standard) var(--ease-out),
+              opacity var(--duration-standard) var(--ease-out),
+              filter var(--duration-standard) var(--ease-out);
+}
+
+.process-flow__step:hover + .process-flow__connector .process-flow__line {
+  background: var(--color-accent-primary);
+  box-shadow: 0 0 10px var(--color-glow-subtle);
+}
+
+.process-flow__step:hover + .process-flow__connector .process-flow__arrow {
+  opacity: 1;
+  transform: translateX(3px);
+  filter: drop-shadow(0 0 6px var(--color-glow-strong));
+}
+
+/* Core Principles Section inside Engineering */
+.engineering__principles {
+  padding-top: var(--space-12);
+  border-top: var(--border-width) solid var(--color-border-subtle);
+}
+
+.section__header--principles {
+  margin-bottom: var(--space-10);
+}
+
+.section__title--sub {
+  font-size: var(--text-3xl);
+  margin-top: var(--space-2);
 }
 
 /* ── Engineering Grid ────────────────────────────────────── */

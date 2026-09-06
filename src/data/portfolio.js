@@ -173,12 +173,42 @@ export const techStack = [
 ];
 
 export const processSteps = [
-  { label: 'Idea', number: '01' },
-  { label: 'Product', number: '02' },
-  { label: 'Design', number: '03' },
-  { label: 'Engineering', number: '04' },
-  { label: 'Validation', number: '05' },
-  { label: 'Ship', number: '06' }
+  {
+    number: '01',
+    title: 'Idea',
+    subtitle: 'Identify real problems',
+    icon: 'lightbulb'
+  },
+  {
+    number: '02',
+    title: 'Product',
+    subtitle: 'Define the solution',
+    icon: 'file-text'
+  },
+  {
+    number: '03',
+    title: 'Design',
+    subtitle: 'Create simple, intuitive UX',
+    icon: 'pencil'
+  },
+  {
+    number: '04',
+    title: 'Engineering',
+    subtitle: 'Build with quality',
+    icon: 'code'
+  },
+  {
+    number: '05',
+    title: 'Validation',
+    subtitle: 'Test and refine',
+    icon: 'shield-check'
+  },
+  {
+    number: '06',
+    title: 'Ship',
+    subtitle: 'Deliver and improve',
+    icon: 'rocket'
+  }
 ];
 
 export const githubRepos = [

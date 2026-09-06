@@ -253,28 +253,37 @@
       </div>
     </section>
 
-    <!-- Process -->
-    <section id="process" class="section process" aria-label="Development Process">
+    <!-- Engineering & Process -->
+    <section id="engineering" class="section engineering" aria-label="Engineering Approach and Process">
+      <div id="process"></div>
       <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">WORKFLOW</span>
-          <h2 class="section__title">From Idea to Product</h2>
+        <!-- Process Header matching user specification -->
+        <div class="process__header">
+          <div class="process__header-left">
+            <span class="section__label">PROCESS</span>
+            <h2 class="section__title">From Idea to Impact</h2>
+          </div>
+          <a href="#engineering-principles" class="process__header-link" id="link-engineering-approach">
+            <span>My Engineering Approach</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
         </div>
-        <div class="process__timeline" id="process-timeline">
-          <!-- Process steps injected via JS -->
-        </div>
-      </div>
-    </section>
 
-    <!-- Engineering Approach -->
-    <section id="engineering" class="section engineering" aria-label="Engineering Approach">
-      <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">PHILOSOPHY</span>
-          <h2 class="section__title">Engineering Approach</h2>
+        <!-- 6-Step Workflow Bar with Icons and Directional Arrows -->
+        <div class="process-flow" id="process-timeline">
+          <!-- Injected via JS -->
         </div>
-        <div class="engineering__grid" id="engineering-grid">
-          <!-- Engineering principles injected via JS -->
+
+        <!-- Core Engineering Principles -->
+        <div class="engineering__principles" id="engineering-principles">
+          <div class="section__header section__header--principles">
+            <span class="section__label">PHILOSOPHY</span>
+            <h3 class="section__title section__title--sub">Engineering Approach</h3>
+            <p class="section__desc">Architectural discipline and production standards guiding every software system I design.</p>
+          </div>
+          <div class="engineering__grid" id="engineering-grid">
+            <!-- Engineering principles injected via JS -->
+          </div>
         </div>
       </div>
     </section>
