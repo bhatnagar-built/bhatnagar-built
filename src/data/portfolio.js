@@ -246,3 +246,130 @@ export const contactInfo = {
   github: 'https://github.com/bhatnagar-built',
   linkedin: 'https://www.linkedin.com/in/abhishek-bhatnagar'
 };
+
+export const appShowcases = {
+  'emi-health': {
+    id: 'emi-health',
+    name: 'EMI Health',
+    domain: 'FinTech',
+    domainClass: 'fintech',
+    headline: 'Privacy-First Personal Finance & Debt Diagnostics',
+    description: 'Local-first zero-telemetry architecture with deterministic EMI amortization, health scoring, and stress-testing.',
+    screens: [
+      {
+        id: 1,
+        title: 'Diagnostic Dashboard',
+        subtitle: 'Debt-to-Income & Health Score (0–100)',
+        src: '/images/apps/emi-health/screen-1.png',
+        tag: 'Dashboard'
+      },
+      {
+        id: 2,
+        title: 'Loan Amortization Setup',
+        subtitle: 'Multi-loan scheduling & repayment engine',
+        src: '/images/apps/emi-health/screen-2.png',
+        tag: 'Loan Setup'
+      },
+      {
+        id: 3,
+        title: 'Savings & Liquidity',
+        subtitle: 'Emergency buffer & liquidity diagnostics',
+        src: '/images/apps/emi-health/screen-3.png',
+        tag: 'Savings'
+      }
+    ]
+  },
+  'counselpro': {
+    id: 'counselpro',
+    name: 'CounselPro',
+    domain: 'LegalTech',
+    domainClass: 'legaltech',
+    headline: 'Verified Legal Consultation & Case Management',
+    description: 'Bar Council credential verification, encrypted case vault, and automated litigation timeline tracking.',
+    screens: [
+      {
+        id: 1,
+        title: 'Practice Dashboard',
+        subtitle: 'Verified advocate consultation & active matters',
+        src: '/images/apps/counselpro/screen-1.png',
+        tag: 'Dashboard'
+      },
+      {
+        id: 2,
+        title: 'AI Legal Assistant',
+        subtitle: 'Automated legal research & document analysis',
+        src: '/images/apps/counselpro/screen-2.png',
+        tag: 'AI Assistant'
+      },
+      {
+        id: 3,
+        title: 'Encrypted Case Vault',
+        subtitle: 'Privileged case records & litigation tracking',
+        src: '/images/apps/counselpro/screen-3.png',
+        tag: 'Case Vault'
+      }
+    ]
+  },
+  'credalytix': {
+    id: 'credalytix',
+    name: 'Credalytix',
+    domain: 'Commercial Banking',
+    domainClass: 'banking',
+    headline: 'Commercial Credit Underwriting & RAM Scorecard Engine',
+    description: 'Institutional-grade B2B credit appraisal platform automating 100-point RAM scorecard and MPBF assessment.',
+    screens: [
+      {
+        id: 1,
+        title: 'Credit Appraisal Vault',
+        subtitle: 'Active commercial underwriting portfolio',
+        src: '/images/apps/credalytix/screen-1.png',
+        tag: 'Case Vault'
+      },
+      {
+        id: 2,
+        title: '100-Point RAM Scorecard',
+        subtitle: 'Multi-factor quantitative & qualitative scoring',
+        src: '/images/apps/credalytix/screen-2.png',
+        tag: 'Scorecard'
+      },
+      {
+        id: 3,
+        title: 'Final Verdict & CAM Summary',
+        subtitle: 'Tandon MPBF calculation & committee memorandum',
+        src: '/images/apps/credalytix/screen-3.png',
+        tag: 'Verdict'
+      }
+    ]
+  },
+  'calstreak': {
+    id: 'calstreak',
+    name: 'CalStreak',
+    domain: 'Health & Habit',
+    domainClass: 'health',
+    headline: 'Habit-First Nutrition & Consecutive Streak Engine',
+    description: 'Deterministic trend calculation, ultra-low friction macro logging, and behavioral streak mechanics.',
+    screens: [
+      {
+        id: 1,
+        title: 'Calorie & Streak Tracker',
+        subtitle: 'Daily macro target & streak consistency',
+        src: '/images/apps/calstreak/screen-1.png',
+        tag: 'Tracker'
+      },
+      {
+        id: 2,
+        title: 'Nutritional Analytics',
+        subtitle: 'Macro distribution & historical trends',
+        src: '/images/apps/calstreak/screen-2.png',
+        tag: 'Analytics'
+      },
+      {
+        id: 3,
+        title: 'Cross-Platform Experience',
+        subtitle: 'Offline-ready habit tracking architecture',
+        src: '/images/apps/calstreak/screen-3.png',
+        tag: 'Overview'
+      }
+    ]
+  }
+};

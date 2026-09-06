@@ -16,11 +16,13 @@ import {
   currentFocus
 } from './data/portfolio.js';
 import { initSciFiBackground } from './components/scifi-background.js';
+import { initBurstShowcase } from './components/burst-showcase.js';
 
 // ── Initialize ──────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initSciFiBackground();
+  initBurstShowcase();
   renderProducts();
   renderCapabilities();
   renderProcessTimeline();
