@@ -112,6 +112,15 @@
   color: var(--color-accent-primary);
 }
 
+.nav__github-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 1.5px solid var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
 .nav__icon {
   width: 16px;
   height: 16px;

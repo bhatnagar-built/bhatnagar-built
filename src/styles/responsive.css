@@ -79,6 +79,11 @@
     gap: var(--space-10);
   }
 
+  .github__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
   .github__repos {
     grid-template-columns: 1fr;
   }
