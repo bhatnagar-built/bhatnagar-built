@@ -559,8 +559,8 @@
 }
 
 [data-theme="light"] .product-card__chrome {
-  background: rgba(241, 245, 249, 0.95);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #F4F7FB;
+  border-bottom: 1px solid #D9E2EC;
 }
 
 .product-card__chrome-dots {
@@ -652,7 +652,7 @@
 }
 
 [data-theme="light"] .product-card__screen-viewport {
-  background: #f1f5f9;
+  background: #F4F7FB;
 }
 
 .product-card__screen-img {
@@ -784,9 +784,9 @@
 }
 
 [data-theme="light"] .product-card__telemetry-pill {
-  background: rgba(14, 165, 233, 0.08);
-  border-color: rgba(14, 165, 233, 0.28);
-  color: #0284c7;
+  background: rgba(22, 143, 208, 0.08);
+  border-color: rgba(22, 143, 208, 0.28);
+  color: #168FD0;
 }
 
 .product-card__category--fintech { color: var(--color-accent-primary); }
@@ -900,14 +900,14 @@
 }
 
 [data-theme="light"] .product-card__action-burst {
-  background: rgba(14, 165, 233, 0.09);
-  border-color: rgba(14, 165, 233, 0.3);
-  color: #0284c7;
+  background: rgba(22, 143, 208, 0.09);
+  border-color: rgba(22, 143, 208, 0.3);
+  color: #168FD0;
 }
 
 [data-theme="light"] .product-card__action-burst:hover {
-  background: rgba(14, 165, 233, 0.16);
-  border-color: #0284c7;
+  background: rgba(22, 143, 208, 0.16);
+  border-color: #168FD0;
 }
 
 .product-card__link {
@@ -1202,35 +1202,35 @@
 /* Light Mode Overrides for Engineering Cards */
 [data-theme="light"] .engineering-card {
   background: #ffffff;
-  border: 1px solid rgba(14, 165, 233, 0.22);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #D9E2EC;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
 }
 
 [data-theme="light"] .engineering-card::before {
-  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(22, 143, 208, 0.4), transparent);
 }
 
 [data-theme="light"] .engineering-card__watermark {
-  color: rgba(14, 165, 233, 0.06);
+  color: rgba(22, 143, 208, 0.06);
 }
 
 [data-theme="light"] .engineering-card:hover .engineering-card__watermark {
-  color: rgba(14, 165, 233, 0.14);
+  color: rgba(22, 143, 208, 0.14);
 }
 
 [data-theme="light"] .engineering-card__icon-box {
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eef6fc 100%);
-  border-color: rgba(14, 165, 233, 0.35);
-  color: #0284c7;
-  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.12);
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #edf4fa 100%);
+  border-color: rgba(22, 143, 208, 0.35);
+  color: #168FD0;
+  box-shadow: 0 2px 10px rgba(22, 143, 208, 0.12);
 }
 
 [data-theme="light"] .engineering-card__title {
-  color: #0f172a;
+  color: #0F172A;
 }
 
 [data-theme="light"] .engineering-card__tagline {
-  color: #0284c7;
+  color: #168FD0;
 }
 
 [data-theme="light"] .engineering-card__desc {
@@ -1238,27 +1238,27 @@
 }
 
 [data-theme="light"] .engineering-chip {
-  background: #f0f9ff;
-  border-color: #bae6fd;
-  color: #0369a1;
+  background: rgba(22, 143, 208, 0.07);
+  border-color: rgba(22, 143, 208, 0.25);
+  color: #168FD0;
 }
 
 [data-theme="light"] .engineering-chip:hover {
-  background: #e0f2fe;
-  border-color: #7dd3fc;
-  color: #0284c7;
+  background: rgba(22, 143, 208, 0.14);
+  border-color: #168FD0;
+  color: #0E77B1;
 }
 
 [data-theme="light"] .engineering-card__footer {
-  border-top-color: rgba(14, 165, 233, 0.12);
+  border-top-color: #D9E2EC;
 }
 
 [data-theme="light"] .engineering-card__enforcement {
-  color: #64748b;
+  color: #475569;
 }
 
 [data-theme="light"] .engineering-card__badge {
-  color: #94a3b8;
+  color: #64748B;
 }
 
 /* ── Tech Cards ──────────────────────────────────────────── */
@@ -1424,51 +1424,51 @@
 /* Light Mode Overrides for Tech Cards */
 [data-theme="light"] .tech-category {
   background: #ffffff;
-  border: 1px solid rgba(14, 165, 233, 0.2);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #D9E2EC;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
 }
 
 [data-theme="light"] .tech-category::before {
-  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(22, 143, 208, 0.4), transparent);
 }
 
 [data-theme="light"] .tech-category__header {
-  border-bottom: 1px solid rgba(14, 165, 233, 0.12);
+  border-bottom: 1px solid #D9E2EC;
 }
 
 [data-theme="light"] .tech-category__icon-wrap {
-  background: rgba(14, 165, 233, 0.08);
-  border: 1px solid rgba(14, 165, 233, 0.24);
-  color: #0284c7;
+  background: rgba(22, 143, 208, 0.08);
+  border: 1px solid rgba(22, 143, 208, 0.24);
+  color: #168FD0;
 }
 
 [data-theme="light"] .tech-category__title {
-  color: #0f172a;
+  color: #0F172A;
 }
 
 [data-theme="light"] .tech-category__index {
-  color: #0284c7;
-  background: rgba(14, 165, 233, 0.08);
-  border: 1px solid rgba(14, 165, 233, 0.25);
+  color: #168FD0;
+  background: rgba(22, 143, 208, 0.08);
+  border: 1px solid rgba(22, 143, 208, 0.25);
 }
 
 [data-theme="light"] .tech-category__count {
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  color: #64748b;
+  background: #F4F7FB;
+  border: 1px solid #D9E2EC;
+  color: #64748B;
 }
 
 [data-theme="light"] .tech-item {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #1e293b;
+  background: #F4F7FB;
+  border: 1px solid #D9E2EC;
+  color: #475569;
 }
 
 [data-theme="light"] .tech-item:hover {
-  background: rgba(14, 165, 233, 0.08);
-  border-color: #0284c7;
-  color: #0369a1;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+  background: rgba(22, 143, 208, 0.08);
+  border-color: #168FD0;
+  color: #168FD0;
+  box-shadow: 0 4px 12px rgba(22, 143, 208, 0.15);
 }
 
 /* ── GitHub Repo Cards ───────────────────────────────────── */
@@ -1650,36 +1650,36 @@
 
 /* Light Mode Overrides */
 [data-theme="light"] .hero__pillars-strip {
-  border-top: 1px solid rgba(14, 165, 233, 0.18);
+  border-top: 1px solid #D9E2EC;
 }
 
 [data-theme="light"] .pillar-badge {
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eef6fc 100%);
-  border: 1.5px solid rgba(14, 165, 233, 0.45);
-  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.12), inset 0 1px 1px #ffffff;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #edf4fa 100%);
+  border: 1.5px solid #D9E2EC;
+  box-shadow: 0 4px 14px rgba(22, 143, 208, 0.1), inset 0 1px 1px #ffffff;
 }
 
 [data-theme="light"] .pillar-item:hover .pillar-badge {
-  border-color: rgba(2, 132, 199, 0.85);
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.28), 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-color: #168FD0;
+  box-shadow: 0 6px 20px rgba(22, 143, 208, 0.22), 0 2px 6px rgba(15, 23, 42, 0.05);
 }
 
 [data-theme="light"] .pillar-badge__icon {
-  color: #0369a1;
-  filter: drop-shadow(0 0 2px rgba(14, 165, 233, 0.2));
+  color: #168FD0;
+  filter: drop-shadow(0 0 2px rgba(22, 143, 208, 0.2));
 }
 
 [data-theme="light"] .pillar-item:hover .pillar-badge__icon {
-  color: #0284c7;
-  filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
+  color: #168FD0;
+  filter: drop-shadow(0 0 6px rgba(22, 143, 208, 0.4));
 }
 
 [data-theme="light"] .pillar-title {
-  color: #0f172a;
+  color: #0F172A;
 }
 
 [data-theme="light"] .pillar-item:hover .pillar-title {
-  color: #0284c7;
+  color: #168FD0;
 }
 
 [data-theme="light"] .pillar-subtitle {
@@ -1687,7 +1687,7 @@
 }
 
 [data-theme="light"] .pillar-item:hover .pillar-subtitle {
-  color: #334155;
+  color: #64748B;
 }
 
 /* Card Pulse Target on Pillar Click */

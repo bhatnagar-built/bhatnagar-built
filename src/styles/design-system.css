@@ -78,21 +78,21 @@
 }
 
 [data-theme="light"] {
-  /* ── Color Palette (Light Theme — Clean High-End Studio) ── */
+  /* ── Color Palette (User Specified Light Mix) ── */
   /* Backgrounds */
-  --color-bg-primary: #F8FAFC;
-  --color-bg-secondary: #F1F5F9;
+  --color-bg-primary: #F4F7FB;
+  --color-bg-secondary: #EBF0F7;
   --color-bg-surface: #FFFFFF;
-  --color-bg-elevated: #F8FAFC;
+  --color-bg-elevated: #FFFFFF;
 
   /* Text */
   --color-text-primary: #0F172A;
-  --color-text-secondary: #334155;
+  --color-text-secondary: #475569;
   --color-text-muted: #64748B;
 
   /* Accents */
-  --color-accent-primary: #0284C7;
-  --color-accent-primary-light: #0369A1;
+  --color-accent-primary: #168FD0;
+  --color-accent-primary-light: #2BA0E2;
   --color-accent-secondary: #6366F1;
   --color-accent-success: #15803D;
   --color-accent-warning: #D97706;
@@ -102,43 +102,43 @@
   --color-btn-primary-text: #FFFFFF;
 
   /* Borders & Surfaces */
-  --color-border: #E2E8F0;
-  --color-border-subtle: #EDF2F7;
-  --color-glow-subtle: rgba(2, 132, 199, 0.12);
-  --color-glow-strong: rgba(2, 132, 199, 0.22);
+  --color-border: #D9E2EC;
+  --color-border-subtle: #E6EDF5;
+  --color-glow-subtle: rgba(22, 143, 208, 0.14);
+  --color-glow-strong: rgba(22, 143, 208, 0.25);
 
   /* Component Colors */
-  --color-nav-bg: rgba(248, 250, 252, 0.85);
-  --color-nav-bg-scrolled: rgba(248, 250, 252, 0.96);
+  --color-nav-bg: rgba(244, 247, 251, 0.88);
+  --color-nav-bg-scrolled: rgba(244, 247, 251, 0.96);
   --color-overlay: rgba(15, 23, 42, 0.45);
-  --color-hover-bg: rgba(15, 23, 42, 0.05);
+  --color-hover-bg: rgba(15, 23, 42, 0.04);
   --color-tag-bg: rgba(15, 23, 42, 0.04);
-  --color-tag-border: rgba(15, 23, 42, 0.08);
-  --color-capability-bg: rgba(2, 132, 199, 0.06);
-  --color-capability-border: rgba(2, 132, 199, 0.14);
-  --color-grid-line: rgba(15, 23, 42, 0.05);
-  --color-hero-radial-1: rgba(2, 132, 199, 0.07);
+  --color-tag-border: #D9E2EC;
+  --color-capability-bg: rgba(22, 143, 208, 0.06);
+  --color-capability-border: rgba(22, 143, 208, 0.18);
+  --color-grid-line: rgba(15, 23, 42, 0.045);
+  --color-hero-radial-1: rgba(22, 143, 208, 0.08);
   --color-hero-radial-2: rgba(99, 102, 241, 0.04);
-  --color-placeholder-grid: rgba(15, 23, 42, 0.06);
-  --color-selection: rgba(2, 132, 199, 0.18);
+  --color-placeholder-grid: rgba(15, 23, 42, 0.05);
+  --color-selection: rgba(22, 143, 208, 0.18);
 
   /* Category pills */
-  --cat-fintech-bg: rgba(2, 132, 199, 0.08);
-  --cat-fintech-border: rgba(2, 132, 199, 0.18);
+  --cat-fintech-bg: rgba(22, 143, 208, 0.08);
+  --cat-fintech-border: rgba(22, 143, 208, 0.22);
   --cat-legaltech-bg: rgba(99, 102, 241, 0.08);
-  --cat-legaltech-border: rgba(99, 102, 241, 0.18);
+  --cat-legaltech-border: rgba(99, 102, 241, 0.22);
   --cat-banking-bg: rgba(217, 119, 6, 0.08);
-  --cat-banking-border: rgba(217, 119, 6, 0.18);
+  --cat-banking-border: rgba(217, 119, 6, 0.22);
   --cat-health-bg: rgba(21, 128, 61, 0.08);
-  --cat-health-border: rgba(21, 128, 61, 0.18);
+  --cat-health-border: rgba(21, 128, 61, 0.22);
 
   /* Shadows — Soft, layered studio grade */
   --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.07), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
   --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 4px 20px rgba(2, 132, 199, 0.12);
-  --shadow-glow-strong: 0 8px 30px rgba(2, 132, 199, 0.22);
+  --shadow-glow: 0 4px 20px rgba(22, 143, 208, 0.14);
+  --shadow-glow-strong: 0 8px 30px rgba(22, 143, 208, 0.25);
 }
 
 /* ── Shared Design Tokens (Typography, Spacing, Motion) ──── */
