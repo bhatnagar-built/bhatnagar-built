@@ -971,40 +971,294 @@
 /* ── Engineering Cards ───────────────────────────────────── */
 .engineering-card {
   position: relative;
-  background: var(--color-bg-surface);
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-8);
+  background: rgba(14, 21, 33, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+  padding: 26px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: border-color var(--duration-standard) var(--ease-out),
-              box-shadow var(--duration-standard) var(--ease-out);
+              box-shadow var(--duration-standard) var(--ease-out),
+              transform var(--duration-standard) var(--ease-out);
+}
+
+.engineering-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+  opacity: 0.7;
+  transition: opacity var(--duration-standard) var(--ease-out);
 }
 
 .engineering-card:hover {
-  border-color: var(--color-accent-primary);
-  box-shadow: var(--shadow-md);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 24px rgba(56, 189, 248, 0.14);
+  transform: translateY(-4px);
 }
 
-.engineering-card__number {
+.engineering-card:hover::before {
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, var(--color-accent-primary), transparent);
+}
+
+.engineering-card__watermark {
+  position: absolute;
+  top: 12px;
+  right: 20px;
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-accent-primary);
-  opacity: 0.6;
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: rgba(56, 189, 248, 0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.engineering-card:hover .engineering-card__watermark {
+  color: rgba(56, 189, 248, 0.12);
+  transform: scale(1.05);
+}
+
+.engineering-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
   margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 2;
+}
+
+.engineering-card__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 35% 35%, rgba(56, 189, 248, 0.15) 0%, rgba(10, 16, 29, 0.8) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  transition: transform var(--duration-micro) var(--ease-out),
+              box-shadow var(--duration-micro) var(--ease-out),
+              border-color var(--duration-micro) var(--ease-out);
+}
+
+.engineering-card:hover .engineering-card__icon-box {
+  transform: scale(1.06);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.engineering-card__icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.engineering-card__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.engineering-card__index-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.engineering-card__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  box-shadow: 0 0 6px var(--color-accent-primary);
+}
+
+.engineering-card__tagline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .engineering-card__title {
   font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .engineering-card__desc {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: var(--leading-relaxed);
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.engineering-card__telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: var(--space-5);
+  position: relative;
+  z-index: 2;
+}
+
+.engineering-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: #7dd3fc;
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 4px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.engineering-chip:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #bae6fd;
+}
+
+.engineering-chip__icon {
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.engineering-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.engineering-card__status-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.engineering-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+  animation: pulseDot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.engineering-card__enforcement {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.engineering-card__badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Light Mode Overrides for Engineering Cards */
+[data-theme="light"] .engineering-card {
+  background: #ffffff;
+  border: 1px solid rgba(14, 165, 233, 0.22);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .engineering-card::before {
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+}
+
+[data-theme="light"] .engineering-card__watermark {
+  color: rgba(14, 165, 233, 0.06);
+}
+
+[data-theme="light"] .engineering-card:hover .engineering-card__watermark {
+  color: rgba(14, 165, 233, 0.14);
+}
+
+[data-theme="light"] .engineering-card__icon-box {
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eef6fc 100%);
+  border-color: rgba(14, 165, 233, 0.35);
+  color: #0284c7;
+  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.12);
+}
+
+[data-theme="light"] .engineering-card__title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .engineering-card__tagline {
+  color: #0284c7;
+}
+
+[data-theme="light"] .engineering-card__desc {
+  color: #475569;
+}
+
+[data-theme="light"] .engineering-chip {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  color: #0369a1;
+}
+
+[data-theme="light"] .engineering-chip:hover {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+  color: #0284c7;
+}
+
+[data-theme="light"] .engineering-card__footer {
+  border-top-color: rgba(14, 165, 233, 0.12);
+}
+
+[data-theme="light"] .engineering-card__enforcement {
+  color: #64748b;
+}
+
+[data-theme="light"] .engineering-card__badge {
+  color: #94a3b8;
 }
 
 /* ── Tech Cards ──────────────────────────────────────────── */

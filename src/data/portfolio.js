@@ -197,22 +197,38 @@ export const engineeringPrinciples = [
   {
     number: '01',
     title: 'Product-First Thinking',
-    desc: 'Software engineered around actual user behavior and real workflows, not theoretical feature lists.'
+    icon: 'compass',
+    tagline: 'PRAGMATIC WORKFLOW DESIGN',
+    desc: 'Software engineered around actual user behavior and real workflows, not theoretical feature lists. Every interface decision is grounded in reducing cognitive load and accelerating task completion.',
+    telemetry: ['Real Workflow Modeling', 'Zero Friction UX', 'Feedback Loops'],
+    enforcement: 'UX Disciplinary Standard'
   },
   {
     number: '02',
     title: 'Privacy by Design',
-    desc: 'Sensitive financial and legal information is protected through local-first storage, client-side encryption, and zero-telemetry architectures where applicable.'
+    icon: 'shield-check',
+    tagline: 'CLIENT-SIDE ISOLATION',
+    desc: 'Sensitive financial and legal information is protected through local-first storage, client-side encryption, and zero-telemetry architectures where applicable. User data remains sovereign.',
+    telemetry: ['Local SQLite Engine', 'AES-256 Storage', 'Zero Telemetry Leaks'],
+    enforcement: 'Cryptographic Protection'
   },
   {
     number: '03',
     title: 'Deterministic Calculation Quality',
-    desc: 'Mission-critical banking and financial models are calibrated against regulatory standards with rigorous boundary testing.'
+    icon: 'cpu',
+    tagline: 'MATHEMATICAL PRECISION',
+    desc: 'Mission-critical banking and financial models are calibrated against regulatory standards with rigorous boundary testing. Floating-point drift is eliminated through integer math engines.',
+    telemetry: ['Zero Rounding Drift', 'Amortization Engine', 'Regulatory Proofs'],
+    enforcement: 'Audit Benchmarked'
   },
   {
     number: '04',
     title: 'Maintainable Architecture',
-    desc: 'Clean separation of presentation, domain business logic, and data layers to ensure codebases remain scalable and resilient over time.'
+    icon: 'boxes',
+    tagline: 'MODULAR SEPARATION',
+    desc: 'Clean separation of presentation, domain business logic, and data layers to ensure codebases remain scalable and resilient over time. Strict decoupling allows rapid independent refactoring.',
+    telemetry: ['Clean Architecture', 'Repository Layering', 'Deterministic State'],
+    enforcement: 'System Decoupling'
   }
 ];
 

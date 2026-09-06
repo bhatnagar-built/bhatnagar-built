@@ -307,11 +307,50 @@ function renderEngineering() {
 
   grid.innerHTML = engineeringPrinciples.map(principle => `
     <div class="engineering-card reveal">
-      <span class="engineering-card__number">${principle.number}</span>
-      <h3 class="engineering-card__title">${principle.title}</h3>
+      <!-- High-Tech Watermark Index -->
+      <div class="engineering-card__watermark" aria-hidden="true">${principle.number}</div>
+
+      <!-- Header with Icon & Discipline Tag -->
+      <div class="engineering-card__header">
+        <div class="engineering-card__icon-box" aria-hidden="true">
+          <i data-lucide="${principle.icon || 'shield-check'}"></i>
+        </div>
+        <div class="engineering-card__meta">
+          <div class="engineering-card__index-pill">
+            <span class="engineering-card__dot" aria-hidden="true"></span>
+            <span class="engineering-card__tagline">${principle.tagline}</span>
+          </div>
+          <h3 class="engineering-card__title">${principle.title}</h3>
+        </div>
+      </div>
+
+      <!-- Description -->
       <p class="engineering-card__desc">${principle.desc}</p>
+
+      <!-- Architectural Telemetry Chips -->
+      <div class="engineering-card__telemetry">
+        ${principle.telemetry.map(chip => `
+          <span class="engineering-chip">
+            <svg class="engineering-chip__icon" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>${chip}</span>
+          </span>
+        `).join('')}
+      </div>
+
+      <!-- Enforcement Standard Footer -->
+      <div class="engineering-card__footer">
+        <div class="engineering-card__status-left">
+          <span class="engineering-card__status-dot" aria-hidden="true"></span>
+          <span class="engineering-card__enforcement">${principle.enforcement}</span>
+        </div>
+        <span class="engineering-card__badge">STD // ${principle.number}</span>
+      </div>
     </div>
   `).join('');
+
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
 }
 
 // ── Render Tech Stack ───────────────────────────────────────
