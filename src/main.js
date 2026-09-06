@@ -322,21 +322,20 @@ function renderTechStack() {
   grid.innerHTML = techStack.map((category, idx) => `
     <div class="tech-category reveal" data-category="${category.id || idx}">
       <div class="tech-category__header">
-        <div class="tech-category__icon-wrap" aria-hidden="true">
-          <i data-lucide="${category.icon || 'code-2'}"></i>
-        </div>
-        <div class="tech-category__meta">
-          <div class="tech-category__topline">
-            <span class="tech-category__index">${category.index || `0${idx + 1}`}</span>
+        <div class="tech-category__top-bar">
+          <div class="tech-category__icon-wrap" aria-hidden="true">
+            <i data-lucide="${category.icon || 'code-2'}"></i>
+          </div>
+          <div class="tech-category__badges">
+            <span class="tech-category__index">0${idx + 1}</span>
             <span class="tech-category__count">${category.items.length} Technologies</span>
           </div>
-          <h3 class="tech-category__title">${category.category}</h3>
         </div>
+        <h3 class="tech-category__title">${category.category}</h3>
       </div>
       <div class="tech-category__items">
         ${category.items.map(item => `
           <span class="tech-item">
-            <span class="tech-item__dot" aria-hidden="true"></span>
             <span class="tech-item__name">${item}</span>
           </span>
         `).join('')}

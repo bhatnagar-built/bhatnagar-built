@@ -978,6 +978,72 @@
   padding: var(--space-4) 0 var(--space-16);
 }
 
+/* Continuous Animated Energy Track (Moving Line from Left to Right) */
+.process-flow__track {
+  position: absolute;
+  top: calc(var(--space-4) + 29px);
+  left: 70px;
+  right: 70px;
+  height: 3px;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+}
+
+.process-flow__track-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.4) 50%, rgba(56, 189, 248, 0.15) 100%);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.15);
+}
+
+.process-flow__track-pulse {
+  position: absolute;
+  top: -3px;
+  left: -220px;
+  width: 220px;
+  height: 9px;
+  display: flex;
+  align-items: center;
+  animation: movingLaserStream 3.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.process-flow__track-tail {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.1) 15%, rgba(56, 189, 248, 0.85) 75%, #38bdf8 100%);
+  box-shadow: 0 0 14px #38bdf8, 0 0 28px rgba(56, 189, 248, 0.6);
+}
+
+.process-flow__track-head {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 14px #ffffff, 0 0 22px #38bdf8, 0 0 34px #00f0ff;
+  flex-shrink: 0;
+  margin-left: -2px;
+}
+
+@keyframes movingLaserStream {
+  0% {
+    left: -220px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
 /* Step Node Container */
 .process-flow__step {
   display: flex;
@@ -995,7 +1061,9 @@
   width: 58px;
   height: 58px;
   border-radius: var(--radius-full);
-  background: var(--color-bg-surface);
+  background: rgba(17, 26, 39, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 2px solid var(--color-accent-primary);
   display: flex;
   align-items: center;
@@ -1067,14 +1135,59 @@
 .process-flow__line {
   flex: 1;
   height: 2px;
-  background: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 0 6px rgba(56, 189, 248, 0.15);
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.75), rgba(56, 189, 248, 0.25));
+  background-size: 200% 100%;
+  animation: lineFlowData 2.4s linear infinite;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+  position: relative;
+  overflow: hidden;
   transition: background var(--duration-standard) var(--ease-out),
               box-shadow var(--duration-standard) var(--ease-out);
 }
 
+.process-flow__line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  animation: lineScanBeam 2.4s ease-in-out infinite;
+}
+
+@keyframes lineFlowData {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes lineScanBeam {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+[data-theme="light"] .process-flow__circle {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+[data-theme="light"] .process-flow__track-line {
+  background: rgba(2, 132, 199, 0.2);
+  box-shadow: none;
+}
+
+[data-theme="light"] .process-flow__track-tail {
+  background: linear-gradient(90deg, transparent 0%, rgba(2, 132, 199, 0.2) 20%, rgba(2, 132, 199, 0.9) 75%, #0284c7 100%);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.6);
+}
+
+[data-theme="light"] .process-flow__track-head {
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff, 0 0 18px #0284c7;
+}
+
 [data-theme="light"] .process-flow__line {
-  background: rgba(2, 132, 199, 0.35);
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.2), rgba(2, 132, 199, 0.7), rgba(2, 132, 199, 0.2));
+  background-size: 200% 100%;
   box-shadow: none;
 }
 
@@ -1126,8 +1239,59 @@
 /* ── Technology Grid ─────────────────────────────────────── */
 .tech__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--space-6);
+  align-items: stretch;
+}
+
+/* Row 1: 3 balanced cards (each 2 columns = 33.3%) */
+.tech-category:nth-child(1),
+.tech-category:nth-child(2),
+.tech-category:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Row 2: 2 balanced cards spanning the full row symmetrically (each 3 columns = 50%) */
+.tech-category:nth-child(4),
+.tech-category:nth-child(5) {
+  grid-column: span 3;
+}
+
+@media (max-width: 1024px) {
+  .tech__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  .tech-category:nth-child(1),
+  .tech-category:nth-child(2),
+  .tech-category:nth-child(3),
+  .tech-category:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .tech-category:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .tech__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .tech-category:nth-child(1),
+  .tech-category:nth-child(2),
+  .tech-category:nth-child(3),
+  .tech-category:nth-child(4),
+  .tech-category:nth-child(5) {
+    grid-column: span 1;
+    max-width: 100%;
+  }
 }
 
 .technology {
@@ -1454,7 +1618,7 @@
 }
 
 .contact__content {
-  max-width: 600px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -1473,13 +1637,17 @@
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: var(--space-10);
 }
 
 .contact__links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;
   gap: var(--space-4);
 }
 
@@ -1487,7 +1655,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-4) var(--space-8);
+  padding: var(--space-4) var(--space-6);
   background: var(--color-bg-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -1495,6 +1663,7 @@
   font-size: var(--text-base);
   font-weight: var(--weight-medium);
   color: var(--color-text-primary);
+  white-space: nowrap;
   transition: border-color var(--duration-standard) var(--ease-out),
               transform var(--duration-standard) var(--ease-out),
               box-shadow var(--duration-standard) var(--ease-out);
