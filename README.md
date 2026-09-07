@@ -91,23 +91,7 @@ A consumer mobile companion built to address tracking burnout by replacing sprea
 
 ## Connect
 
+- **Website**: [bhatnagar-built.web.app](https://bhatnagar-built.web.app/)
 - **LinkedIn**: [linkedin.com/in/abhishek-bhatnagar-44022b131](https://www.linkedin.com/in/abhishek-bhatnagar-44022b131/)
 - **GitHub**: [github.com/bhatnagar-built](https://github.com/bhatnagar-built)
 - **Email**: [abhi.bhatnagar.official@gmail.com](mailto:abhi.bhatnagar.official@gmail.com)
-
----
-
-## 🌐 Personal Portfolio Web Application
-
-This repository also hosts the complete source code for Abhishek Bhatnagar's interactive personal portfolio website:
-- **Architecture**: Vanilla HTML5, ES Modules, Modular CSS Design System, Vite bundler.
-- **Features**: Fluid Dark & Light modes, verified open-source repository matrix, interactive architecture pipeline, and system telemetry HUD.
-- **Local Development**:
-  ```bash
-  npm install
-  npm run dev
-  ```
-- **Production Build**:
-  ```bash
-  npm run build
-  ```
