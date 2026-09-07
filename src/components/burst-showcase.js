@@ -13,6 +13,8 @@ export function initBurstShowcase() {
   let currentAppId = 'emi-health';
   let activeScreenIndex = 0; // 0 = Screen 1 (front), 1 = Screen 2, 2 = Screen 3
 
+  let isBursting = false;
+
   // Attach click listeners to hero product cards
   const cards = stack.querySelectorAll('.hero__product-card');
   cards.forEach(card => {
@@ -27,17 +29,28 @@ export function initBurstShowcase() {
       card.appendChild(cue);
     }
 
-    function triggerBurst() {
+    function triggerBurst(e) {
+      if (isBursting) return;
       const productId = card.getAttribute('data-product');
       if (!productId || !appShowcases[productId]) return;
-      openBurstStage(productId);
+
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      const rect = card.getBoundingClientRect();
+      const cx = (e && e.clientX) ? e.clientX : (rect.left + rect.width / 2);
+      const cy = (e && e.clientY) ? e.clientY : (rect.top + rect.height / 2);
+
+      openBurstStage(productId, cx, cy);
     }
 
     card.addEventListener('click', triggerBurst);
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        triggerBurst();
+        triggerBurst(e);
       }
     });
   });
@@ -46,30 +59,33 @@ export function initBurstShowcase() {
   document.addEventListener('click', (e) => {
     const trigger = e.target.closest('[data-trigger-burst]');
     if (trigger) {
+      if (isBursting) return;
       const productId = trigger.getAttribute('data-trigger-burst');
       if (productId && appShowcases[productId]) {
         e.preventDefault();
-        openBurstStage(productId);
+        e.stopPropagation();
+        const rect = trigger.getBoundingClientRect();
+        const cx = (e && e.clientX) ? e.clientX : (rect.left + rect.width / 2);
+        const cy = (e && e.clientY) ? e.clientY : (rect.top + rect.height / 2);
+        openBurstStage(productId, cx, cy);
       }
     }
   });
 
-  // Open the Burst Stage with explosive transition
-  function openBurstStage(productId) {
+  // Open the Burst Stage with clean, executive transition
+  function openBurstStage(productId, cx, cy) {
+    if (isBursting) return;
+    isBursting = true;
     currentAppId = productId;
     activeScreenIndex = 0;
 
-    // Smooth scroll to hero section if scrolled down
-    const heroEl = document.getElementById('hero');
-    if (heroEl && window.scrollY > 40) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Single unified trigger for the subtle background canvas pulse
+    if (typeof window.triggerNuclearExplosion === 'function' && cx !== undefined && cy !== undefined) {
+      window.triggerNuclearExplosion(cx, cy);
     }
 
-    // 1. Add bursting animation to stack
+    // Snappy transition for cards
     stack.classList.add('hero__product-stack--bursting');
-
-    // 2. Play particle shockwave effect
-    createShockwave();
 
     setTimeout(() => {
       stack.style.display = 'none';
@@ -82,7 +98,19 @@ export function initBurstShowcase() {
       // Force reflow and activate
       void stage.offsetWidth;
       stage.classList.add('hero__burst-stage--active');
-    }, 220);
+
+      // Ensure exploded screen view is centered in viewport without jumping to top of page
+      const rect = stage.getBoundingClientRect();
+      const navOffset = 80;
+      if (rect.top < navOffset || rect.bottom > window.innerHeight) {
+        const targetScroll = window.scrollY + rect.top - navOffset;
+        window.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
+      }
+
+      setTimeout(() => {
+        isBursting = false;
+      }, 150);
+    }, 200);
   }
 
   // Close the Burst Stage and restore 4 cards
@@ -97,15 +125,14 @@ export function initBurstShowcase() {
       stack.classList.add('hero__product-stack--restoring');
       void stack.offsetWidth;
       stack.classList.remove('hero__product-stack--restoring');
-    }, 220);
-  }
 
-  // Create shockwave effect
-  function createShockwave() {
-    const wave = document.createElement('div');
-    wave.className = 'burst-shockwave';
-    stack.parentElement.appendChild(wave);
-    setTimeout(() => wave.remove(), 700);
+      // Keep user aligned with the product cards
+      const stackRect = stack.getBoundingClientRect();
+      if (stackRect.top < 80 || stackRect.bottom > window.innerHeight) {
+        stack.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      isBursting = false;
+    }, 200);
   }
 
   // Render the Burst Stage Content

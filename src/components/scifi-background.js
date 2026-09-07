@@ -97,21 +97,28 @@ export function initSciFiBackground() {
   }
 
   // ── Element 3: Interactive Constellation Nodes (Screenshot 1) ───────
-  // High density particle field (85–140 nodes) with strong magnetic pull
+  // Dispersed constellation nodes (52–84 nodes desktop, 30% reduced on mobile)
   const nodes = [];
 
   function populateNodes() {
-    // Dynamic node count scaled with screen resolution: 85 min to 140 max
-    const targetCount = Math.min(Math.max(Math.floor((width * height) / 9500), 85), 140);
+    const isMobile = width <= 768;
+    // Dynamic node count scaled with screen resolution: 52 min to 84 max on desktop
+    // Mobile mode: reduce particles by 30% (36 min to 58 max) for clean readability and 60fps
+    let targetCount = Math.min(Math.max(Math.floor((width * height) / 17000), 52), 84);
+    if (isMobile) {
+      targetCount = Math.floor(targetCount * 0.70);
+    }
+
     while (nodes.length < targetCount) {
       nodes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: 1.3 + Math.random() * 1.5,
-        baseOpacity: 0.35 + Math.random() * 0.45,
-        accent: Math.random() > 0.8
+        vx: (Math.random() - 0.5) * 0.16,
+        vy: (Math.random() - 0.5) * 0.16,
+        radius: 0.68 + Math.random() * 0.68,
+        baseOpacity: 0.25 + Math.random() * 0.35,
+        accent: Math.random() > 0.8,
+        charged: 0
       });
     }
     if (nodes.length > targetCount) {
@@ -162,6 +169,66 @@ export function initSciFiBackground() {
   window.addEventListener('pointerleave', () => { mouse.active = false; }, { passive: true });
   window.addEventListener('touchend', () => { mouse.active = false; }, { passive: true });
 
+  // ── Element 5: Refined Executive Ion Wavefront (Single Action Trigger) ──────
+  const EXPLODE_RADIUS = 150;
+  const EXPLODE_FORCE_MAX = 4.0;
+  const sparks = [];         // Subtle micro-telemetry particles
+  const shockwaves = [];     // Single sleek ion pulse ring
+
+  function handleExplosion(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    const cx = clientX - rect.left;
+    const cy = clientY - rect.top;
+    const isMobile = width <= 768;
+
+    // 1. Single Crisp Ion Wavefront Ring (No duplicate or delayed rings)
+    shockwaves.push({
+      x: cx,
+      y: cy,
+      radius: 6,
+      maxRadius: isMobile ? 120 : 155,
+      life: 1.0,
+      decay: 0.038
+    });
+
+    // 2. Delicate Micro-Telemetry Particles (Minimal, elegant, quick decay)
+    const sparkCount = isMobile ? 6 : 10;
+    for (let i = 0; i < sparkCount; i++) {
+      const angle = (Math.PI * 2 * i) / sparkCount + (Math.random() - 0.5) * 0.35;
+      const speed = 2.4 + Math.random() * 3.8;
+      sparks.push({
+        x: cx,
+        y: cy,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1.0,
+        decay: 0.038 + Math.random() * 0.015,
+        radius: 0.75 + Math.random() * 0.5,
+        isViolet: Math.random() > 0.6
+      });
+    }
+
+    // 3. Gentle harmonic pulse on constellation nodes (No noisy secondary sparks)
+    nodes.forEach(node => {
+      const dx = node.x - cx;
+      const dy = node.y - cy;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < EXPLODE_RADIUS && dist > 1) {
+        const intensity = (1 - dist / EXPLODE_RADIUS);
+        const force = intensity * intensity * EXPLODE_FORCE_MAX;
+        const angle = Math.atan2(dy, dx);
+
+        node.vx += Math.cos(angle) * force;
+        node.vy += Math.sin(angle) * force;
+        node.charged = Math.max(node.charged || 0, 0.55);
+      }
+    });
+  }
+
+  // Expose single ion explosion trigger exclusively for project view screen action
+  window.triggerNuclearExplosion = handleExplosion;
+
   // ── Element 4: Ambient Scanner Line ─────────────────────────
   let scanY = 0;
   const scanSpeed = 0.6;
@@ -171,9 +238,9 @@ export function initSciFiBackground() {
     ctx.clearRect(0, 0, width, height);
 
     const isDark = isDarkTheme();
-    const cyanBase = isDark ? '56, 189, 248' : '2, 132, 199';
-    const cyanLight = isDark ? '103, 211, 255' : '3, 105, 161';
-    const violetBase = isDark ? '139, 124, 255' : '99, 102, 241';
+    const cyanBase = isDark ? '56, 189, 248' : '3, 105, 161';
+    const cyanLight = isDark ? '103, 211, 255' : '2, 132, 199';
+    const violetBase = isDark ? '139, 124, 255' : '79, 70, 229';
 
     // Smooth mouse lerping
     if (mouse.active) {
@@ -287,11 +354,12 @@ export function initSciFiBackground() {
     });
 
     // 4. Draw Floating Constellation Nodes & Gravitational Attraction
-    const ATTRACT_RADIUS = 260;
-    const CONNECT_RADIUS = 120;
-    const MOUSE_CONNECT_RADIUS = 200;
+    // 50% restricted gravity pull radius (80px), gentle pull force
+    const ATTRACT_RADIUS = 80;
+    const CONNECT_RADIUS = 110;
+    const MOUSE_CONNECT_RADIUS = 80;
 
-    // Physics update with active magnetic pull
+    // Physics update with gentle magnetic pull (60% reduced overall speed)
     nodes.forEach(node => {
       if (mouse.active) {
         const mdx = mouse.x - node.x;
@@ -299,8 +367,8 @@ export function initSciFiBackground() {
         const mdist = Math.hypot(mdx, mdy);
 
         if (mdist < ATTRACT_RADIUS && mdist > 4) {
-          // Distinct gravitational acceleration toward cursor
-          const pullForce = (1 - mdist / ATTRACT_RADIUS) * 0.22;
+          // Restricted gravitational nudge toward cursor
+          const pullForce = (1 - mdist / ATTRACT_RADIUS) * 0.05;
           node.vx += (mdx / mdist) * pullForce;
           node.vy += (mdy / mdist) * pullForce;
         }
@@ -310,14 +378,14 @@ export function initSciFiBackground() {
       node.vx *= 0.94;
       node.vy *= 0.94;
 
-      // Keep organic wandering motion
+      // Keep organic wandering motion (60% slower velocity bounds)
       const currentSpeed = Math.hypot(node.vx, node.vy);
-      if (currentSpeed < 0.25) {
-        node.vx += (Math.random() - 0.5) * 0.08;
-        node.vy += (Math.random() - 0.5) * 0.08;
-      } else if (currentSpeed > 3.0) {
-        node.vx = (node.vx / currentSpeed) * 3.0;
-        node.vy = (node.vy / currentSpeed) * 3.0;
+      if (currentSpeed < 0.10) {
+        node.vx += (Math.random() - 0.5) * 0.032;
+        node.vy += (Math.random() - 0.5) * 0.032;
+      } else if (currentSpeed > 3.2) {
+        node.vx = (node.vx / currentSpeed) * 3.2;
+        node.vy = (node.vy / currentSpeed) * 3.2;
       }
 
       node.x += node.vx;
@@ -330,8 +398,8 @@ export function initSciFiBackground() {
       if (node.y > height + 15) node.y = -15;
     });
 
-    // Draw inter-node filaments
-    ctx.lineWidth = 0.7;
+    // Draw inter-node filaments & soft mutual dispersion (keeps particles scattered)
+    ctx.lineWidth = isDark ? 0.7 : 1.0;
     for (let i = 0; i < nodes.length; i++) {
       const node = nodes[i];
       for (let j = i + 1; j < nodes.length; j++) {
@@ -340,8 +408,18 @@ export function initSciFiBackground() {
         const dy = node.y - target.y;
         const dist = Math.hypot(dx, dy);
 
+        // Soft dispersion to keep particles naturally scattered
+        if (dist < 50 && dist > 1) {
+          const push = (1 - dist / 50) * 0.015;
+          node.vx += (dx / dist) * push;
+          node.vy += (dy / dist) * push;
+          target.vx -= (dx / dist) * push;
+          target.vy -= (dy / dist) * push;
+        }
+
         if (dist < CONNECT_RADIUS) {
-          const alpha = (1 - dist / CONNECT_RADIUS) * (isDark ? 0.32 : 0.16);
+          // Darker connection lines in light mode specifically (0.46 alpha)
+          const alpha = (1 - dist / CONNECT_RADIUS) * (isDark ? 0.32 : 0.46);
           ctx.strokeStyle = `rgba(${node.accent ? violetBase : cyanBase}, ${alpha})`;
           ctx.beginPath();
           ctx.moveTo(node.x, node.y);
@@ -350,7 +428,7 @@ export function initSciFiBackground() {
         }
       }
 
-      // Dynamic filament to cursor
+      // Dynamic filament to cursor (restricted radius, darker in light mode)
       let isNearCursor = false;
       let mdistToCursor = 9999;
       if (mouse.active) {
@@ -360,10 +438,10 @@ export function initSciFiBackground() {
 
         if (mdistToCursor < MOUSE_CONNECT_RADIUS) {
           isNearCursor = true;
-          const malpha = (1 - mdistToCursor / MOUSE_CONNECT_RADIUS) * (isDark ? 0.75 : 0.4);
+          const malpha = (1 - mdistToCursor / MOUSE_CONNECT_RADIUS) * (isDark ? 0.75 : 0.68);
           ctx.save();
           ctx.strokeStyle = `rgba(${cyanLight}, ${malpha})`;
-          ctx.lineWidth = 1.0;
+          ctx.lineWidth = isDark ? 1.0 : 1.3;
           if (isDark) {
             ctx.shadowBlur = 10;
             ctx.shadowColor = `rgba(${cyanBase}, 0.8)`;
@@ -376,15 +454,25 @@ export function initSciFiBackground() {
         }
       }
 
-      // Draw node point with illuminated glow when attracted
+      // Draw node point with illuminated glow when attracted or charged by nuclear blast
       ctx.save();
       const nodeColor = node.accent ? violetBase : cyanBase;
-      const currentRadius = isNearCursor ? node.radius * 1.5 : node.radius;
-      const currentOpacity = isNearCursor ? 0.95 : node.baseOpacity;
+      const isCharged = (node.charged || 0) > 0.05;
+      const currentRadius = isNearCursor ? node.radius * 1.5 : (isCharged ? node.radius * 2.2 : node.radius);
+      const currentOpacity = isNearCursor ? 0.95 : (isCharged ? 1.0 : (isDark ? node.baseOpacity : Math.min(node.baseOpacity * 1.6, 0.85)));
+
+      if (isCharged) {
+        node.charged = Math.max(0, node.charged - 0.025);
+        ctx.strokeStyle = `rgba(${cyanLight}, ${node.charged * 0.8})`;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, currentRadius + 4 * node.charged, 0, Math.PI * 2);
+        ctx.stroke();
+      }
 
       if (isDark) {
-        ctx.shadowBlur = isNearCursor ? 12 : 5;
-        ctx.shadowColor = isNearCursor ? `rgba(${cyanLight}, 0.95)` : `rgba(${cyanBase}, 0.4)`;
+        ctx.shadowBlur = isNearCursor ? 12 : (isCharged ? 16 : 5);
+        ctx.shadowColor = isNearCursor ? `rgba(${cyanLight}, 0.95)` : (isCharged ? `rgba(255, 255, 255, 1)` : `rgba(${cyanBase}, 0.4)`);
       }
 
       ctx.fillStyle = `rgba(${nodeColor}, ${currentOpacity})`;
@@ -394,27 +482,79 @@ export function initSciFiBackground() {
       ctx.restore();
     }
 
-    // Draw Magnetic Cursor Reticle
+    // Draw Magnetic Cursor Reticle (50% reduced outer circle: 18px -> 9px)
     if (mouse.active) {
       ctx.save();
       ctx.strokeStyle = `rgba(${cyanLight}, ${isDark ? 0.45 : 0.25})`;
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = 1.1;
       ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 18, 0, Math.PI * 2);
+      ctx.arc(mouse.x, mouse.y, 9, 0, Math.PI * 2);
       ctx.stroke();
 
       ctx.fillStyle = `rgba(${cyanLight}, ${isDark ? 0.95 : 0.7})`;
       if (isDark) {
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = 8;
         ctx.shadowColor = `rgba(${cyanLight}, 1)`;
       }
       ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
+      ctx.arc(mouse.x, mouse.y, 2, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
 
-    // 5. Draw Ambient Scanning Laser Line
+    // 5. Draw Refined Micro-Telemetry Sparks
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const spark = sparks[i];
+      spark.x += spark.vx;
+      spark.y += spark.vy;
+      spark.vx *= 0.86;
+      spark.vy *= 0.86;
+      spark.life -= spark.decay;
+
+      if (spark.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+
+      ctx.save();
+      const sparkColor = spark.isViolet ? violetBase : cyanLight;
+      ctx.fillStyle = `rgba(${sparkColor}, ${spark.life * (isDark ? 0.9 : 0.7)})`;
+      if (isDark) {
+        ctx.shadowBlur = 5 * spark.life;
+        ctx.shadowColor = `rgba(${sparkColor}, ${spark.life * 0.8})`;
+      }
+      ctx.beginPath();
+      ctx.arc(spark.x, spark.y, spark.radius * Math.max(0.2, spark.life), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // 6. Draw Single Crisp Ion Wavefront Ring
+    for (let i = shockwaves.length - 1; i >= 0; i--) {
+      const wave = shockwaves[i];
+      wave.radius += (wave.maxRadius - wave.radius) * 0.20;
+      wave.life -= wave.decay;
+
+      if (wave.life <= 0) {
+        shockwaves.splice(i, 1);
+        continue;
+      }
+
+      ctx.save();
+      const alpha = wave.life * (isDark ? 0.65 : 0.42);
+      ctx.strokeStyle = `rgba(${cyanLight}, ${alpha})`;
+      ctx.lineWidth = Math.max(0.75, 1.35 * wave.life);
+      if (isDark) {
+        ctx.shadowBlur = 8 * wave.life;
+        ctx.shadowColor = `rgba(${cyanBase}, ${wave.life * 0.7})`;
+      }
+      ctx.beginPath();
+      ctx.arc(wave.x, wave.y, wave.radius, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // 7. Draw Ambient Scanning Laser Line
     scanY += scanSpeed;
     if (scanY > height + 50) {
       scanY = -50;
@@ -459,6 +599,7 @@ export function initSciFiBackground() {
     destroy: () => {
       if (animationId) cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
+      delete window.triggerNuclearExplosion;
       canvas.remove();
     }
   };
