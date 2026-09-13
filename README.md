@@ -7,7 +7,7 @@
 [![FinTech Consulting](https://img.shields.io/badge/FinTech-Domain%20Consulting-10B981?style=flat-square)](https://idea-into-impact.firebaseapp.com/#contact)
 
 > **FinTech Software Consultant & Mobile App Engineer (Flutter, iOS, Android)**  
-> Delhi NCR & Mumbai, India • Operating Globally • [idea-into-impact.firebaseapp.com](https://idea-into-impact.firebaseapp.com/)
+> Mumbai & Indore, India • Operating Globally • [idea-into-impact.firebaseapp.com](https://idea-into-impact.firebaseapp.com/)
 
 I advise FinTech founders, NBFCs, credit risk leaders, and product teams to translate complex lending guidelines and banking calculations into deterministic, production-grade software and cross-platform mobile apps.
 
