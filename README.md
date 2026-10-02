@@ -7,7 +7,11 @@
 
 <p align="center">
   <a href="https://github.com/bhatnagar-built">
-    <img src="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-jet.svg" alt="GitHub Jet Heatmap Telemetry" width="100%" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake.svg">
+      <img alt="GitHub Contribution Grid Snake Game" src="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake-dark.svg" width="100%" />
+    </picture>
   </a>
 </p>
 
