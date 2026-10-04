@@ -20,13 +20,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Snake SVGs
-        uses: Platane/snk/svg-only@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?color_snake=#38bdf8&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+          node-version: "20"
+
+      - name: Generate Snake SVGs
+        run: |
+          INPUT_GITHUB_USER_NAME="${{ github.repository_owner }}" \
+          INPUT_OUTPUTS="dist/github-contribution-grid-snake-dark.svg?color_snake=%23a3e635&color_dots=%2301553d,%23057a55,%2310b981,%2322c55e,%23a3e635&color_dot_border=%2300080f
+          dist/github-contribution-grid-snake.svg?color_snake=%23a3e635&color_dots=%2301553d,%23057a55,%2310b981,%2322c55e,%23a3e635&color_dot_border=%2300080f" \
+          node scripts/generate_snake.js
 
       - name: Commit & Push changes
         run: |
