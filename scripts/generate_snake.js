@@ -229,12 +229,12 @@ var require_index = __commonJS({
           const createSvg = (grid, cells, chain, drawOptions, animationOptions) => {
             const gridWidth = grid.width * drawOptions.sizeCell;
             const gridHeight = grid.height * drawOptions.sizeCell;
-            const paddingX = 24;
-            const paddingTop = 94;
-            const paddingBottom = 22;
+            const paddingX = 22;
+            const paddingTop = 22;
+            const paddingBottom = 20;
             const cardWidth = gridWidth + paddingX * 2;
             const stackHeight = 12;
-            const stackY = gridHeight + 18;
+            const stackY = gridHeight + 16;
             const cardHeight = paddingTop + stackY + stackHeight + paddingBottom;
             const duration = animationOptions.stepDurationMs * chain.length;
             const livingCells = createLivingCells(grid, chain, cells);
@@ -248,17 +248,7 @@ var require_index = __commonJS({
             const style = generateColorVar(drawOptions) + elements.map((e) => e.styles).flat().join("\n");
             
             const cardMarkup = `
-              <rect x="1" y="1" width="${cardWidth - 2}" height="${cardHeight - 2}" rx="16" ry="16" fill="#00080f" stroke="#00f18f" stroke-width="1.5"/>
-              <g transform="translate(${paddingX}, 24)">
-                <circle cx="18" cy="18" r="18" fill="none" stroke="#00f18f" stroke-width="1.5"/>
-                <text x="18" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'SF Pro Mono', monospace" font-size="14" font-weight="700" fill="#00f18f">01</text>
-                <text x="48" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.5" fill="#00f18f">
-                  EMERALD + LIME GREEN <tspan font-size="13" font-weight="500" fill="#a3e635">(Recommended)</tspan>
-                </text>
-                <text x="48" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">
-                  All empty cells replaced with Low color for a consistent, vibrant look.
-                </text>
-              </g>
+              <rect x="1" y="1" width="${cardWidth - 2}" height="${cardHeight - 2}" rx="14" ry="14" fill="#00080f" stroke="#00f18f" stroke-width="1.5"/>
               <g transform="translate(${paddingX}, ${paddingTop})">
                 ${elements.map((e) => e.svgElements).flat().join("")}
               </g>
@@ -3030,8 +3020,17 @@ var require_run = __commonJS({
       };
       ;
       const getGithubUserContribution = async (userName, o) => {
-        const res = await fetch("https://github-contributions-api.jogruber.de/v4/" + userName);
-        const data = await res.json();
+        let data = null;
+        try {
+          const res = await fetch("https://github-contributions-api.jogruber.de/v4/" + userName);
+          if (res.ok) data = await res.json();
+        } catch (e) {
+          console.log("Fetch fallback triggered");
+        }
+        if (!data && fs.existsSync("/tmp/contributions_cache.json")) {
+          data = JSON.parse(fs.readFileSync("/tmp/contributions_cache.json", "utf8"));
+        }
+        if (!data) data = { contributions: [] };
         const countsByDate = {};
         for (const c of data.contributions) {
           countsByDate[c.date] = c.count;
