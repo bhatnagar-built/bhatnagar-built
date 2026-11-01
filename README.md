@@ -8,9 +8,9 @@
 <p align="center">
   <a href="https://github.com/bhatnagar-built">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake.svg">
-      <img alt="GitHub Contribution Grid Snake Game" src="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/dist/github-contribution-grid-snake-dark.svg" width="100%" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/profile-3d-contrib/profile-night-rainbow.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/profile-3d-contrib/profile-green-animate.svg">
+      <img alt="Abhishek Bhatnagar's 3D Contribution Calendar" src="https://raw.githubusercontent.com/bhatnagar-built/bhatnagar-built/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
     </picture>
   </a>
 </p>
