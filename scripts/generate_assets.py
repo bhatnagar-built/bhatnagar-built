@@ -3,9 +3,24 @@ import struct
 import subprocess
 
 def convert_headshot_to_bmp():
-    src_png = "/Users/abhi/Documents/Portfolio/portfolio/public/images/profile.png"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    src_img = os.path.join(script_dir, "..", "assets", "profile.jpg")
+    prep_png = "/tmp/profile_hud_prep.png"
     out_bmp = "/tmp/abhi_profile.bmp"
-    subprocess.run(["sips", "-s", "format", "bmp", src_png, "--out", out_bmp], check=True, stdout=subprocess.DEVNULL)
+
+    # Soft radial vignette to blend the light office background into the dark cyber HUD
+    try:
+        subprocess.run([
+            "magick", src_img,
+            "(", "-size", "500x500", "radial-gradient:white-black", "-gravity", "center", ")",
+            "-compose", "multiply", "-composite",
+            "-resize", "512x512!",
+            prep_png
+        ], check=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["sips", "-s", "format", "bmp", prep_png, "--out", out_bmp], check=True, stdout=subprocess.DEVNULL)
+    except Exception:
+        subprocess.run(["sips", "-s", "format", "bmp", src_img, "--out", out_bmp], check=True, stdout=subprocess.DEVNULL)
+
     return out_bmp
 
 def generate_ascii_lines(bmp_path, width=92, height=54):
@@ -14,16 +29,20 @@ def generate_ascii_lines(bmp_path, width=92, height=54):
 
     offset = struct.unpack('<I', bmp[10:14])[0]
     w = 512
-    h = 512
+    header_h = struct.unpack('<i', bmp[22:26])[0]
     row_bytes = (w * 3 + 3) & ~3
+    is_top_down = (header_h < 0)
 
     # Framing: Center on Abhishek's face and upper torso
-    crop_x1, crop_x2 = 100, 412
-    crop_y1, crop_y2 = 40, 450
+    crop_x1, crop_x2 = 65, 447
+    crop_y1, crop_y2 = 18, 478
 
     lines = []
     for ty in range(height):
-        sy = int(crop_y1 + ty * (crop_y2 - crop_y1) / height)
+        if is_top_down:
+            sy = int(crop_y1 + ty * (crop_y2 - crop_y1) / height)
+        else:
+            sy = int(crop_y1 + (height - 1 - ty) * (crop_y2 - crop_y1) / height)
         row_start = offset + sy * row_bytes
         chars = []
         for tx in range(width):
@@ -34,24 +53,24 @@ def generate_ascii_lines(bmp_path, width=92, height=54):
             lum = 0.299 * r + 0.587 * g + 0.114 * b
 
             # High-tech HUD tone ramp
-            if lum < 28:
+            if lum < 22:
                 if (tx + ty) % 11 == 0:
                     ch = '.'
                 elif (tx * 2 + ty) % 19 == 0:
                     ch = ':'
                 else:
                     ch = ' '
-            elif lum < 50:
+            elif lum < 45:
                 ch = '.'
-            elif lum < 75:
+            elif lum < 70:
                 ch = '-'
-            elif lum < 105:
+            elif lum < 100:
                 ch = '='
-            elif lum < 135:
+            elif lum < 130:
                 ch = '+'
-            elif lum < 170:
+            elif lum < 165:
                 ch = '*'
-            elif lum < 210:
+            elif lum < 205:
                 ch = '%'
             else:
                 ch = '#'
@@ -475,7 +494,7 @@ def generate_jet_heatmap(out_path):
     print(f"Generated {out_path} ({len(jet_svg)} bytes)")
 
 if __name__ == '__main__':
-    base_dir = "/Users/abhi/Documents/Github/bhatnagar-built"
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     bmp_path = convert_headshot_to_bmp()
     lines = generate_ascii_lines(bmp_path)
     
