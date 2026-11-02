@@ -27,7 +27,7 @@ I explore AI systems and build practical, user-focused products. My interests sp
 - **CounselPro** — [Showcase](https://github.com/bhatnagar-built/counselpro-app-showcase) · Modern legal practice management suite & verified advocate matching
 - **CalStreak** — [Showcase](https://github.com/bhatnagar-built/CalStreak-Showcase) · [Web app](https://calstreak.web.app/) · [Google Play](https://play.google.com/store/apps/details?id=com.abhishekbhatnagar.calstreak) · Habit-first nutrition & consecutive streak tracking
 - **Jeevan Setu** — [Showcase](https://github.com/bhatnagar-built/jeevan-setu-app-showcase) · Privacy-first emergency blood donation platform with in-app WebRTC calling
-- **Muscle Power** — Home and gym workout training application · cross-platform workout engine
+- **Muscle Power** — [Showcase](https://github.com/bhatnagar-built/muscle-power-app-showcase) · Home and gym workout training application · adaptive hypertrophy & workout planner
 
 ## Tools & technologies
 
