@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="220" viewBox="0 0 1600 220">
+<rect width="1600" height="220" rx="16" fill="#0a100e" stroke="#263a31"/>
+<g font-family="Inter,Segoe UI,Arial,sans-serif"><text x="64" y="58" fill="#eef2ef" font-size="28" font-weight="600">Tools &amp; technologies</text><text x="64" y="86" fill="#718078" font-size="14" letter-spacing="1.5">A PRACTICAL, EVOLVING TOOLKIT</text></g>
+<g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="middle">
+ <g transform="translate(64 118)"><rect width="210" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="105" y="36" fill="#dce5df">Flutter · Dart</text></g>
+ <g transform="translate(294 118)"><rect width="210" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="105" y="36" fill="#dce5df">Firebase · Supabase</text></g>
+ <g transform="translate(524 118)"><rect width="210" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="105" y="36" fill="#dce5df">Next.js · TypeScript</text></g>
+ <g transform="translate(754 118)"><rect width="210" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="105" y="36" fill="#dce5df">SQL · Power BI</text></g>
+ <g transform="translate(984 118)"><rect width="210" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="105" y="36" fill="#dce5df">Git · GitHub</text></g>
+ <g transform="translate(1214 118)"><rect width="322" height="60" rx="9" fill="#0e1714" stroke="#29483a"/><text x="161" y="36" fill="#dce5df">Jira · Figma · Postman</text></g>
+</g>
+</svg>
