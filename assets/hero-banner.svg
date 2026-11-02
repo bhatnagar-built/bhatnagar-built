@@ -1,58 +1,72 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
 <title id="title">Abhishek Bhatnagar — AI Engineer and Product Builder</title>
-<desc id="desc">Minimal dark hero banner with restrained emerald accents and an abstract AI systems network.</desc>
+<desc id="desc">Midnight Blue and Electric Cyan hero banner with minimal system network flow.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080d0d"/><stop offset=".58" stop-color="#0b1111"/><stop offset="1" stop-color="#080c0d"/></linearGradient>
-  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#31c99a"/><stop offset="1" stop-color="#91d8b5"/></linearGradient>
-  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1b6650" stop-opacity=".12"/><stop offset=".5" stop-color="#39bd91" stop-opacity=".72"/><stop offset="1" stop-color="#1b6650" stop-opacity=".12"/></linearGradient>
-  <radialGradient id="orb"><stop stop-color="#2ba77a" stop-opacity=".22"/><stop offset="1" stop-color="#2ba77a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#080C18"/>
+    <stop offset=".58" stop-color="#0B1124"/>
+    <stop offset="1" stop-color="#080C18"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#38BDF8"/>
+    <stop offset="1" stop-color="#818CF8"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#1E293B" stop-opacity=".12"/>
+    <stop offset=".5" stop-color="#38BDF8" stop-opacity=".72"/>
+    <stop offset="1" stop-color="#1E293B" stop-opacity=".12"/>
+  </linearGradient>
+  <radialGradient id="orb">
+    <stop stop-color="#38BDF8" stop-opacity=".15"/>
+    <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
   <filter id="soft"><feGaussianBlur stdDeviation="5"/></filter>
 </defs>
 <rect width="1600" height="480" rx="20" fill="url(#bg)"/>
-<path d="M0 0H1600V480H0Z" fill="none" stroke="#21312c" stroke-width="1.2"/>
+<path d="M0 0H1600V480H0Z" fill="none" stroke="#1E2A4A" stroke-width="1.2"/>
 <circle cx="1280" cy="220" r="290" fill="url(#orb)"/>
 <!-- quiet technical grid -->
-<g opacity=".18" stroke="#2e5b49" stroke-width="1">
+<g opacity=".2" stroke="#1E2A4A" stroke-width="1">
   <path d="M870 0V480M990 0V480M1110 0V480M1230 0V480M1350 0V480M1470 0V480"/>
   <path d="M820 80H1600M820 160H1600M820 240H1600M820 320H1600M820 400H1600"/>
 </g>
-<g fill="#4b6d5e" opacity=".35">
+<g fill="#38BDF8" opacity=".3">
   <circle cx="1420" cy="76" r="2"/><circle cx="1460" cy="76" r="2"/><circle cx="1500" cy="76" r="2"/><circle cx="1540" cy="76" r="2"/>
   <circle cx="1420" cy="116" r="2"/><circle cx="1460" cy="116" r="2"/><circle cx="1500" cy="116" r="2"/><circle cx="1540" cy="116" r="2"/>
 </g>
 <!-- abstract model / system flow -->
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M890 284 C1000 284 1005 192 1105 192 S1232 294 1325 294 S1440 214 1540 214" stroke="#1c4539" stroke-width="2"/>
-  <path d="M890 330 C1000 330 1028 250 1115 250 S1220 345 1328 345 S1440 280 1540 280" stroke="#15372f" stroke-width="1.5"/>
-  <path d="M890 375 C1000 375 1030 316 1120 316 S1240 390 1330 390 S1440 340 1540 340" stroke="#15372f" stroke-width="1.5"/>
+  <path d="M890 284 C1000 284 1005 192 1105 192 S1232 294 1325 294 S1440 214 1540 214" stroke="#151D32" stroke-width="2"/>
+  <path d="M890 330 C1000 330 1028 250 1115 250 S1220 345 1328 345 S1440 280 1540 280" stroke="#10172A" stroke-width="1.5"/>
+  <path d="M890 375 C1000 375 1030 316 1120 316 S1240 390 1330 390 S1440 340 1540 340" stroke="#10172A" stroke-width="1.5"/>
   <path d="M890 284 C1000 284 1005 192 1105 192 S1232 294 1325 294 S1440 214 1540 214" stroke="url(#line)" stroke-width="1.2"/>
 </g>
-<g fill="#1e7054" stroke="#62c99e" stroke-width="1.2">
+<g fill="#151D32" stroke="#38BDF8" stroke-width="1.2">
   <circle cx="1105" cy="192" r="6"/><circle cx="1325" cy="294" r="6"/><circle cx="1540" cy="214" r="6"/>
 </g>
-<g fill="#a8c8b9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="2.8" opacity=".72">
+<g fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="2.8" opacity=".8">
   <text x="910" y="158">INPUT</text><text x="1208" y="257">PROCESS</text><text x="1450" y="182">OUTPUT</text>
 </g>
 <!-- moving signal: GIF version animates this point too -->
-<circle cx="1210" cy="253" r="13" fill="#3bd09a" opacity=".13" filter="url(#soft)"/>
-<circle id="signal" cx="1210" cy="253" r="4.2" fill="#8edbb9">
+<circle cx="1210" cy="253" r="13" fill="#38BDF8" opacity=".15" filter="url(#soft)"/>
+<circle id="signal" cx="1210" cy="253" r="4.2" fill="#38BDF8">
   <animateMotion dur="6s" repeatCount="indefinite" path="M890 284 C1000 284 1005 192 1105 192 S1232 294 1325 294 S1440 214 1540 214"/>
 </circle>
 <!-- text -->
 <g font-family="Inter,Segoe UI,Arial,sans-serif">
-  <text x="92" y="94" fill="#71c9a3" font-size="14" letter-spacing="3.8">AI  /  PRODUCT  /  APPLIED TECHNOLOGY</text>
-  <text x="88" y="207" fill="#f2f5f3" font-size="67" font-weight="650" letter-spacing="-2">Abhishek Bhatnagar</text>
-  <text x="92" y="263" fill="#62c99e" font-size="26" font-weight="500" letter-spacing=".3">AI Engineer <tspan fill="#526b60">/</tspan> Product Builder</text>
-  <text x="92" y="316" fill="#b2bcb7" font-size="20">Exploring AI systems and building practical, user-focused products.</text>
-  <text x="92" y="356" fill="#77847e" font-size="15" letter-spacing="1.4">AI APPLICATIONS</text>
-  <circle cx="270" cy="351" r="2.5" fill="#428a6d"/>
-  <text x="290" y="356" fill="#77847e" font-size="15" letter-spacing="1.4">LLMs &amp; AGENTS</text>
-  <circle cx="478" cy="351" r="2.5" fill="#428a6d"/>
-  <text x="498" y="356" fill="#77847e" font-size="15" letter-spacing="1.4">AUTOMATION</text>
-  <circle cx="645" cy="351" r="2.5" fill="#428a6d"/>
-  <text x="665" y="356" fill="#77847e" font-size="15" letter-spacing="1.4">PRODUCT BUILDING</text>
+  <text x="92" y="94" fill="#38BDF8" font-size="14" letter-spacing="3.8">AI  /  PRODUCT  /  APPLIED TECHNOLOGY</text>
+  <text x="88" y="207" fill="#E2E8F0" font-size="67" font-weight="650" letter-spacing="-2">Abhishek Bhatnagar</text>
+  <text x="92" y="263" fill="#38BDF8" font-size="26" font-weight="500" letter-spacing=".3">AI Engineer <tspan fill="#818CF8">/</tspan> Product Builder</text>
+  <text x="92" y="316" fill="#94A3B8" font-size="20">Exploring AI systems and building practical, user-focused products.</text>
+  <text x="92" y="356" fill="#94A3B8" font-size="15" letter-spacing="1.4">AI APPLICATIONS</text>
+  <circle cx="270" cy="351" r="2.5" fill="#38BDF8"/>
+  <text x="290" y="356" fill="#94A3B8" font-size="15" letter-spacing="1.4">LLMs &amp; AGENTS</text>
+  <circle cx="478" cy="351" r="2.5" fill="#38BDF8"/>
+  <text x="498" y="356" fill="#94A3B8" font-size="15" letter-spacing="1.4">AUTOMATION</text>
+  <circle cx="645" cy="351" r="2.5" fill="#38BDF8"/>
+  <text x="665" y="356" fill="#94A3B8" font-size="15" letter-spacing="1.4">PRODUCT BUILDING</text>
 </g>
-<path d="M92 405H1508" stroke="#24362f" stroke-width="1"/>
-<text x="92" y="438" fill="#718079" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="2.5">IDEA  →  EXPERIMENT  →  BUILD  →  IMPROVE</text>
-<text x="1508" y="438" text-anchor="end" fill="#718079" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="2">BHATNAGAR-BUILT</text>
+<path d="M92 405H1508" stroke="#1E2A4A" stroke-width="1"/>
+<text x="92" y="438" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="2.5">IDEA  →  EXPERIMENT  →  BUILD  →  IMPROVE</text>
+<text x="1508" y="438" text-anchor="end" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="2">BHATNAGAR-BUILT</text>
 </svg>

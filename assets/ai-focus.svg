@@ -1,14 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="300" viewBox="0 0 1600 300">
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1110"/><stop offset="1" stop-color="#080d0d"/></linearGradient><linearGradient id="a" x2="1"><stop stop-color="#2d9f78"/><stop offset="1" stop-color="#83c9a8"/></linearGradient></defs>
-<rect width="1600" height="300" rx="16" fill="url(#bg)" stroke="#263a31"/>
+<defs>
+  <linearGradient id="bg" x2="1" y2="1">
+    <stop stop-color="#080C18"/>
+    <stop offset="1" stop-color="#0B1124"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="300" rx="16" fill="url(#bg)" stroke="#1E2A4A"/>
 <g font-family="Inter,Segoe UI,Arial,sans-serif">
-<text x="64" y="62" fill="#eef2ef" font-size="28" font-weight="600">Areas of focus</text>
-<text x="64" y="91" fill="#718078" font-size="14" letter-spacing="1.8">LEARNING · EXPERIMENTING · BUILDING</text>
+  <text x="64" y="62" fill="#E2E8F0" font-size="28" font-weight="600">Areas of focus</text>
+  <text x="64" y="91" fill="#94A3B8" font-size="14" letter-spacing="1.8">LEARNING · EXPERIMENTING · BUILDING</text>
 </g>
 <g transform="translate(64 124)" font-family="Inter,Segoe UI,Arial,sans-serif">
- <g><rect width="350" height="126" rx="12" fill="#0e1714" stroke="#29483a"/><circle cx="34" cy="34" r="13" fill="none" stroke="#63c59a" stroke-width="1.6"/><path d="M29 34h10M34 29v10" stroke="#63c59a" stroke-width="1.5"/><text x="64" y="40" fill="#dce5df" font-size="19" font-weight="600">AI applications</text><text x="24" y="81" fill="#8d9a92" font-size="14">Useful AI-powered product experiences</text><text x="24" y="105" fill="#5fac88" font-size="11" letter-spacing="1.5">01 / EXPLORE</text></g>
- <g transform="translate(370 0)"><rect width="350" height="126" rx="12" fill="#0e1714" stroke="#29483a"/><circle cx="34" cy="34" r="13" fill="none" stroke="#63c59a" stroke-width="1.6"/><circle cx="34" cy="34" r="4" fill="#63c59a"/><path d="M34 17v5M34 46v5M17 34h5M46 34h5" stroke="#63c59a"/><text x="64" y="40" fill="#dce5df" font-size="19" font-weight="600">LLMs &amp; agents</text><text x="24" y="81" fill="#8d9a92" font-size="14">Models, tools and agent workflows</text><text x="24" y="105" fill="#5fac88" font-size="11" letter-spacing="1.5">02 / EXPERIMENT</text></g>
- <g transform="translate(740 0)"><rect width="350" height="126" rx="12" fill="#0e1714" stroke="#29483a"/><path d="M22 29h24M22 39h17M22 49h24" stroke="#63c59a" stroke-width="2" stroke-linecap="round"/><text x="64" y="40" fill="#dce5df" font-size="19" font-weight="600">Automation</text><text x="24" y="81" fill="#8d9a92" font-size="14">Workflows, APIs and integrations</text><text x="24" y="105" fill="#5fac88" font-size="11" letter-spacing="1.5">03 / CONNECT</text></g>
- <g transform="translate(1110 0)"><rect width="350" height="126" rx="12" fill="#0e1714" stroke="#29483a"/><path d="M23 26h23v23H23zM28 31h13v13H28z" fill="none" stroke="#63c59a" stroke-width="1.6"/><text x="64" y="40" fill="#dce5df" font-size="19" font-weight="600">Product building</text><text x="24" y="81" fill="#8d9a92" font-size="14">From idea to practical release</text><text x="24" y="105" fill="#5fac88" font-size="11" letter-spacing="1.5">04 / SHIP</text></g>
+  <g>
+    <rect width="350" height="126" rx="12" fill="#151D32" stroke="#1E2A4A"/>
+    <circle cx="34" cy="34" r="13" fill="none" stroke="#38BDF8" stroke-width="1.6"/>
+    <path d="M29 34h10M34 29v10" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="64" y="40" fill="#E2E8F0" font-size="19" font-weight="600">AI applications</text>
+    <text x="24" y="81" fill="#94A3B8" font-size="14">Useful AI-powered product experiences</text>
+    <text x="24" y="105" fill="#38BDF8" font-size="11" letter-spacing="1.5">01 / EXPLORE</text>
+  </g>
+  <g transform="translate(370 0)">
+    <rect width="350" height="126" rx="12" fill="#151D32" stroke="#1E2A4A"/>
+    <circle cx="34" cy="34" r="13" fill="none" stroke="#38BDF8" stroke-width="1.6"/>
+    <circle cx="34" cy="34" r="4" fill="#38BDF8"/>
+    <path d="M34 17v5M34 46v5M17 34h5M46 34h5" stroke="#38BDF8"/>
+    <text x="64" y="40" fill="#E2E8F0" font-size="19" font-weight="600">LLMs &amp; agents</text>
+    <text x="24" y="81" fill="#94A3B8" font-size="14">Models, tools and agent workflows</text>
+    <text x="24" y="105" fill="#818CF8" font-size="11" letter-spacing="1.5">02 / EXPERIMENT</text>
+  </g>
+  <g transform="translate(740 0)">
+    <rect width="350" height="126" rx="12" fill="#151D32" stroke="#1E2A4A"/>
+    <path d="M22 29h24M22 39h17M22 49h24" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+    <text x="64" y="40" fill="#E2E8F0" font-size="19" font-weight="600">Automation</text>
+    <text x="24" y="81" fill="#94A3B8" font-size="14">Workflows, APIs and integrations</text>
+    <text x="24" y="105" fill="#38BDF8" font-size="11" letter-spacing="1.5">03 / CONNECT</text>
+  </g>
+  <g transform="translate(1110 0)">
+    <rect width="350" height="126" rx="12" fill="#151D32" stroke="#1E2A4A"/>
+    <path d="M23 26h23v23H23zM28 31h13v13H28z" fill="none" stroke="#38BDF8" stroke-width="1.6"/>
+    <text x="64" y="40" fill="#E2E8F0" font-size="19" font-weight="600">Product building</text>
+    <text x="24" y="81" fill="#94A3B8" font-size="14">From idea to practical release</text>
+    <text x="24" y="105" fill="#818CF8" font-size="11" letter-spacing="1.5">04 / SHIP</text>
+  </g>
 </g>
 </svg>

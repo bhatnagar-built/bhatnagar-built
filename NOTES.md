@@ -1,9 +1,11 @@
-# GitHub README assets — AI / Product Builder
+# GitHub README assets — AI / Product Builder (Option 2 – Midnight Blue + Electric Cyan)
 
-Visual direction: restrained charcoal + muted emerald, clean typography, fine-line system diagram, no neon-heavy 3D imagery.
+Visual direction: **Midnight Blue + Electric Cyan**. Deep space midnight background (`#080C18`), refined navy cards (`#151D32`), crisp Electric Cyan accents (`#38BDF8`), secondary indigo accents (`#818CF8`), high-contrast main text (`#E2E8F0`), and clean muted text (`#94A3B8`).
 
 Identity wording: **AI Engineer / Product Builder**. The README intentionally does not label the profile as a software developer. AI topics are framed as areas of exploration and building, not as unverified credentials.
 
-Animation: the hero GIF has one subtle signal dot gliding across the system-flow lines in a seamless loop. There is no flashing, bouncing, or rapid motion. Use `hero-banner.gif` in the README for reliable animation. `hero-banner.svg` is the scalable source and includes SVG motion; GitHub's rendering may not preserve SVG animation consistently.
+Animation: 
+- `hero-banner.gif`: subtle electric cyan signal dot gliding across the system-flow lines in a seamless loop.
+- `digital-equalizer.gif`: 66-band responsive digital equalizer with electric cyan peaks, glowing active bands, and midnight blue background.
 
 Supporting banners are static SVGs and PNG previews: `ai-focus`, `projects`, and `toolkit`.
