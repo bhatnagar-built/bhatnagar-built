@@ -19,12 +19,15 @@ I explore AI systems and build practical, user-focused products. My interests sp
 ## Selected projects
 
 <p align="center">
-  <img src="./assets/projects.svg" width="100%" alt="Selected projects: CalStreak, EMI Health and Koderaft" />
+  <img src="./assets/projects.svg" width="100%" alt="Selected projects: Credalytix, EMI Health, CounselPro, CalStreak, Jeevan Setu and Muscle Power" />
 </p>
 
-- **CalStreak** — [Web app](https://calstreak.web.app/) · [Google Play](https://play.google.com/store/apps/details?id=com.abhishekbhatnagar.calstreak)
-- **EMI Health** — [Project](https://emi-health-d408f.web.app/) · currently in testing
-- **Koderaft** — [Website](https://koderaft.pages.dev/)
+- **Credalytix** — [Showcase](https://github.com/bhatnagar-built/Credalytix-Working-Capital-Eligibility-Calculator-showcase) · Institutional commercial credit underwriting, 100-point RAM scorecard & MPBF models
+- **EMI Health** — [Showcase](https://github.com/bhatnagar-built/emi-health-app-showcase) · [Project](https://emi-health-d408f.web.app/) · Privacy-first debt diagnostics & zero-drift loan amortization mobile app
+- **CounselPro** — [Showcase](https://github.com/bhatnagar-built/counselpro-app-showcase) · Modern legal practice management suite & verified advocate matching
+- **CalStreak** — [Showcase](https://github.com/bhatnagar-built/CalStreak-Showcase) · [Web app](https://calstreak.web.app/) · [Google Play](https://play.google.com/store/apps/details?id=com.abhishekbhatnagar.calstreak) · Habit-first nutrition & consecutive streak tracking
+- **Jeevan Setu** — [Showcase](https://github.com/bhatnagar-built/jeevan-setu-app-showcase) · Privacy-first emergency blood donation platform with in-app WebRTC calling
+- **Muscle Power** — Home and gym workout training application · cross-platform workout engine
 
 ## Tools & technologies
 
