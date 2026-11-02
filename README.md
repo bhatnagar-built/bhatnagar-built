@@ -2,6 +2,12 @@
   <img src="./assets/hero-banner.gif" width="100%" alt="Abhishek Bhatnagar — AI Engineer and Product Builder" />
 </p>
 
+<p align="center">
+  <a href="https://github.com/bhatnagar-built">
+    <img alt="Digital Equalizer // Signal Active" src="./assets/digital-equalizer.gif" width="100%" />
+  </a>
+</p>
+
 ## About
 
 I explore AI systems and build practical, user-focused products. My interests span AI applications, LLM-powered workflows, automation, product thinking and turning ideas into useful experiences.
